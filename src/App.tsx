@@ -1,4 +1,6 @@
 import { useState } from "react";
+import logo from "./imports/logo.png";
+
 
 const NAV_LINKS = ["UFO.recordz", "Events", "Label", "Valeurs", "Contact"];
 
@@ -380,7 +382,7 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
         {/* Label identifier */}
         <div className="animate-fade-in-up delay-200 flex items-center gap-3">
           <div style={{ width: 28, height: 1, background: "rgba(80,227,194,0.5)" }} />
-          <span className="font-mono text-xs" style={{ color: "#50e3c2", letterSpacing: "0.3em" }}>SECTOR-9 RECORDS</span>
+          <span className="font-mono text-xs" style={{ color: "#50e3c2", letterSpacing: "0.3em" }}>Par nous, pour vous</span>
           <div style={{ width: 28, height: 1, background: "rgba(80,227,194,0.5)" }} />
         </div>
 
@@ -390,12 +392,12 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
           style={{ fontSize: "clamp(3.5rem, 12vw, 9rem)", lineHeight: 0.88, letterSpacing: "-0.02em", fontWeight: 800, color: "#e2e2e4" }}
         >
           UFO<br />
-          <span style={{ color: "rgba(226,226,228,0.18)", WebkitTextStroke: "1px rgba(226,226,228,0.28)" }}>FROM</span><br />
-          .recordz
+          <span style={{ color: "rgba(226,226,228,0.18)", WebkitTextStroke: "1px rgba(226,226,228,0.28)" }}>.recordz</span><br />
+          
         </h1>
 
         <p className="animate-fade-in-up delay-500 text-sm font-light" style={{ color: "rgba(226,226,228,0.38)", letterSpacing: "0.14em" }}>
-          TECHNO LABEL · EVENT OPERATIONS · BERLIN
+          TEKNO LABEL & EVENTS 
         </p>
 
         <div className="animate-fade-in-up delay-700 flex flex-col sm:flex-row gap-4 items-center">
@@ -422,7 +424,7 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
         style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(80,227,194,0.12), transparent)" }}
       />
       <div className="absolute bottom-8 font-mono text-xs" style={{ color: "rgba(80,227,194,0.3)", letterSpacing: "0.2em" }}>
-        ↓ SCROLL
+        
       </div>
     </section>
   );
@@ -436,13 +438,13 @@ function Nav({ active, setActive }: { active: string; setActive: (s: string) => 
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5"
       style={{ background: "linear-gradient(180deg, rgba(2,2,3,0.98) 0%, transparent 100%)", backdropFilter: "blur(12px)" }}
     >
-      <button
-        onClick={() => setActive("home")}
-        className="font-condensed tracking-widest text-sm"
-        style={{ color: "#50e3c2", letterSpacing: "0.3em" }}
-      >
-        SECTOR-9 ◈
-      </button>
+      <button onClick={() => setActive("home")}>
+      <img
+        src={logo}
+        alt="UFO.recordz"
+        className="h-10 w-auto"
+      />
+    </button>
       <div className="hidden md:flex items-center gap-8">
         {NAV_LINKS.map((link) => (
           <button
@@ -728,7 +730,7 @@ function Label() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div>
           <p className="text-base font-light leading-relaxed mb-6" style={{ color: "rgba(226,226,228,0.6)", lineHeight: 1.8 }}>
-            Sector-9 Records is an independent techno label operating out of Berlin since 2019. We curate machine-driven, uncompromising techno — from the hypnotic and subtle to the full-power and relentless.
+            UFO.recordz is an independent techno label operating out of Paris since 2024. We curate machine-driven, uncompromising techno — from the hypnotic and subtle to the full-power and relentless.
           </p>
           <p className="text-base font-light leading-relaxed" style={{ color: "rgba(226,226,228,0.4)", lineHeight: 1.8 }}>
             Beyond the catalogue, we operate club nights across Europe under the Sector-9 banner — residencies in Berlin, London, Paris, and Amsterdam — with a dedicated focus on sound quality, spatial design, and artists who define their own frequency.

@@ -874,29 +874,7 @@ function ConductCharter() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {[
-              "PAS DE RACISME",
-              "PAS DE SEXISME",
-              "PAS DE LGBTQIA+PHOBIE",
-              "PAS DE VALIDISME",
-              "PAS DE HARCÈLEMENT",
-              "PAS DE VIOLENCES",
-            ].map((item) => (
-              <span
-                key={item}
-                className="font-mono text-xs px-3 py-2"
-                style={{
-                  color: "rgba(226,226,228,0.55)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  background: "rgba(255,255,255,0.02)",
-                  letterSpacing: "0.08em",
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          
 
           <p
             className="font-condensed text-2xl md:text-3xl"

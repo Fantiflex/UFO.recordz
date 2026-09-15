@@ -526,6 +526,95 @@ function Nav({ active, setActive }: { active: string; setActive: (s: string) => 
   );
 }
 
+
+function WhoWeAre() {
+  return (
+    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+      <SectionHeader label="À PROPOS" title="QUI SOMMES-NOUS ?" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-start">
+        
+        {/* Left statement */}
+        <div>
+          <p
+            className="font-condensed uppercase"
+            style={{
+              fontSize: "clamp(2.4rem, 6vw, 5.5rem)",
+              lineHeight: 0.92,
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
+              color: "#e2e2e4",
+            }}
+          >
+            PAR NOUS,
+            <br />
+            <span style={{ color: "#50e3c2" }}>
+              POUR VOUS.
+            </span>
+          </p>
+
+          <div
+            className="mt-8"
+            style={{
+              width: 60,
+              height: 1,
+              background: "rgba(80,227,194,0.45)",
+            }}
+          />
+        </div>
+
+        {/* Right content */}
+        <div className="flex flex-col gap-8">
+          <p
+            className="text-base md:text-lg font-light"
+            style={{
+              color: "rgba(226,226,228,0.68)",
+              lineHeight: 1.85,
+            }}
+          >
+            UFO.recordz est une association loi 1901, un collectif et un label
+            indépendant basé à Paris, dédié à la musique tekno, à la fête libre
+            et à la création d’espaces où artistes et publics peuvent se
+            rencontrer autrement.
+          </p>
+
+          <p
+            className="text-base font-light"
+            style={{
+              color: "rgba(226,226,228,0.42)",
+              lineHeight: 1.85,
+            }}
+          >
+            Nous organisons des événements, accompagnons des artistes et
+            développons des projets autour de la tekno et de ses cultures,
+            avec une approche communautaire, indépendante et collaborative.
+            Notre objectif est de mettre en avant la culture free party et les
+            artistes qui la font vivre.
+          </p>
+
+          {/* Small tags */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {["TEKNO", "FREE PARTY", "EVENTS", "LABEL", "COLLECTIF"].map((tag) => (
+              <span
+                key={tag}
+                className="font-mono text-xs px-3 py-1.5"
+                style={{
+                  color: "rgba(80,227,194,0.65)",
+                  border: "1px solid rgba(80,227,194,0.16)",
+                  background: "rgba(80,227,194,0.035)",
+                  letterSpacing: "0.12em",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Releases() {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
@@ -625,7 +714,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 function Events() {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
-      <SectionHeader label="LIVE OPERATIONS" title="UPCOMING EVENTS" />
+      <SectionHeader label="LIVE OPERATIONS" title="PASSED EVENTS" />
       <div className="flex flex-col gap-px" style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
         {EVENTS.map((ev, idx) => (
           <div
@@ -639,7 +728,7 @@ function Events() {
               </span>
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-[220px]">
               <h3
                 className="font-condensed text-2xl font-700 mb-1"
                 style={{ fontWeight: 700, letterSpacing: "0.05em" }}
@@ -651,8 +740,8 @@ function Events() {
               </p>
             </div>
 
-            <div className="flex-none hidden lg:block">
-              <div className="flex gap-2">
+            <div className="hidden lg:block max-w-md">
+              <div className="flex flex-wrap gap-2">
                 {ev.lineup.map((a) => (
                   <span
                     key={a}
@@ -769,14 +858,15 @@ function Label() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div>
           <p className="text-base font-light leading-relaxed mb-6" style={{ color: "rgba(226,226,228,0.6)", lineHeight: 1.8 }}>
-            UFO.recordz is an independent techno label operating out of Paris since 2024. We curate machine-driven, uncompromising techno — from the hypnotic and subtle to the full-power and relentless.
+            Nous proposons un accompagnement artistique professionnel et gratuit (Ingé son, graphiste, DA…). 
+
+A destination des producteur-ices issu-es de la scène free party souhaitant développer leur projet musical. N'hésite pas à nous contacter pour plus d'informations.
           </p>
           <p className="text-base font-light leading-relaxed" style={{ color: "rgba(226,226,228,0.4)", lineHeight: 1.8 }}>
-            Beyond the catalogue, we operate club nights across Europe under the Sector-9 banner — residencies in Berlin, London, Paris, and Amsterdam — with a dedicated focus on sound quality, spatial design, and artists who define their own frequency.
           </p>
 
           <div className="mt-12 grid grid-cols-3 gap-8">
-            {[["2019", "FOUNDED"], ["47", "RELEASES"], ["6", "RESIDENT ARTISTS"]].map(([num, label]) => (
+            {[ ["81", "SINGLE RELEASES"], ["6", "VA RELEASES"],["5", "EPs RELEASES"]].map(([num, label]) => (
               <div key={label}>
                 <div className="font-condensed text-4xl font-800 mb-1" style={{ fontWeight: 800, color: "#50e3c2" }}>{num}</div>
                 <div className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.3)", letterSpacing: "0.15em" }}>{label}</div>
@@ -787,18 +877,64 @@ function Label() {
 
         <div className="flex flex-col gap-px" style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
           {[
-            ["BOOKING", "booking@sector9.io"],
-            ["DEMOS", "demos@sector9.io"],
-            ["PRESS", "press@sector9.io"],
-            ["DISTRIBUTION", "Via Clone Records (EU) / Midheaven (US)"],
-          ].map(([label, value]) => (
+              ["BOOKING", "contact@uforecordz.fr"],
+              ["DEMOS", "https://forms.gle/GU8uJ4fi4ypd4mKYA"],
+              ["PRESS", "fantine@uforecordz.fr"],
+            ]
+          .map(([label, value]) => (
             <div
               key={label}
               className="flex items-center justify-between p-5"
-              style={{ background: "var(--card)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+              style={{
+                background: "var(--card)",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+              }}
             >
-              <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.3)", letterSpacing: "0.15em" }}>{label}</span>
-              <span className="font-mono text-xs" style={{ color: "rgba(80,227,194,0.7)", letterSpacing: "0.08em" }}>{value}</span>
+              <span
+                className="font-mono text-xs"
+                style={{
+                  color: "rgba(226,226,228,0.3)",
+                  letterSpacing: "0.15em",
+                }}
+              >
+                {label}
+              </span>
+
+              {value.startsWith("https://") ? (
+                <a
+                  href={value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
+                  style={{
+                    color: "rgba(80,227,194,0.7)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  {label === "DEMOS" ? "FORMULAIRE" : value}
+                </a>
+              ) : value.includes("@") ? (
+                <a
+                  href={`mailto:${value}`}
+                  className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
+                  style={{
+                    color: "rgba(80,227,194,0.7)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  {value}
+                </a>
+              ) : (
+                <span
+                  className="font-mono text-xs"
+                  style={{
+                    color: "rgba(80,227,194,0.7)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  {value}
+                </span>
+              )}
             </div>
           ))}
         </div>
@@ -865,6 +1001,7 @@ export default function App() {
       {active === "home" && (
         <>
           <Hero setActive={setActive} />
+          <WhoWeAre />
           <Releases />
           <Events />
           <Artists />

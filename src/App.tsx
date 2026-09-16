@@ -12,6 +12,9 @@ import va001Verso from "./imports/VA001_verso.JPG";
 import va006Recto from "./imports/VA006_recto.JPG";
 import va006Verso from "./imports/VA006_verso.JPG";
 
+
+import { EVENTS } from "./data/events";
+
 const NAV_LINKS = ["UFO.recordz", "Events", "Label", "Valeurs", "Contact"];
 
 const RELEASES = [
@@ -68,72 +71,7 @@ const RELEASES = [
   },
 ];
 
-const EVENTS = [
-  {
-    id: "PR26-01",
-    name: "PRIDE RADICALE 2026",
-    venue: "Paris, France",
-    date: "SUN 14 JUN 2026",
-    time: "14:00 — 18:00",
-    lineup: ["Jadette", "Fantiflex", "HAUS ARKANA"],
-    status: "PASSED",
-  },
-  {
-    id: "MF26-01",
-    name: "MANIFESTIVE 2026",
-    venue: "Paris, France",
-    date: "SAT 13 JUN 2026",
-    time: "14:00 — 18:00",
-    lineup: ["UFORICK", "FANTIFLEX", "YPO", "WIJA"],
-    status: "PASSED",
-  },
-  {
-    id: "IF26-01",
-    name: "INTERFILIÈRES 2026",
-    venue: "91, IDF, France",
-    date: "SAT 31 MAY 2026",
-    time: "15:00 — 04:30",
-    lineup: ["FANTIFLEX", "UFORICK", "MAYA GORA", "CLAUDIEN vs ANNETH", "16 SOUPAPES"],
-    status: "SOLD OUT",
-  },
-  {
-    id: "CF26-04",
-    name: "SYNDROME",
-    venue: "La Cité Fertile, Pantin",
-    date: "FRI 15 MAY 2026",
-    time: "15:00 — 01:30",
-    lineup: ["KOU2TATANE", "HERRSPINLER", "ZAZA", "UFORICK", "LAMBDA23", "KARLFROYE", "FOUSSY", "p3b3"],
-    status: "SOLD OUT",
-  },
-  {
-    id: "CF26-03",
-    name: "SYMPTOME",
-    venue: "La Cité Fertile, Pantin",
-    date: "FRI 25 APR 2026",
-    time: "15:00 — 01:30",
-    lineup: ["CLAUDIEN", "LA VASE", "MIZZ","1FAM", "BAROX", "HELEN THEIA","FLOKON", "LA PESTE NOIRE", "MENTALIS vs HASHINO"],
-    status: "SOLD OUT",
-  },
-  {
-    id: "CF26-02",
-    name: "INFRAREC",
-    venue: "La Cité Fertile, Pantin",
-    date: "FRI 07 MAR 2026",
-    time: "15:00 — 01:30",
-    lineup: ["UFORICK", "SAKAJ", "SAPHIRELEFLEUR", "KOU2TATANE","LE MOUSKET", "SUNNYFLEX","SOUL SENCE","KILU"],
-    status: "SOLD OUT",
-  },
-  {
-    id: "CF26-01",
-    name: "TERMINUS",
-    venue: "La Cité Fertile, Pantin",
-    date: "FRI 09 JAN 2026",
-    time: "18:00 — 23:30",
-    lineup: ["UFORICK", "YPO", "SAPHIRELEFLEUR", "TWOLETTERS","SKORCHSIN"],
-    status: "SOLD OUT",
-  }
 
-];
 
 const ARTISTS = [
   { name: "VØID SIGNAL", origin: "Berlin, DE", releases: 4, photo: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop&auto=format" },

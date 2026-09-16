@@ -29,12 +29,19 @@ function Navbar({ active, setActive }: { active: string; setActive: (s: string) 
             {link.toUpperCase()}
           </button>
         ))}
-        <button
-          className="font-condensed text-xs tracking-widest border px-4 py-2 transition-all duration-200 hover:bg-[#50e3c2] hover:text-black"
-          style={{ borderColor: "rgba(80,227,194,0.4)", color: "#50e3c2", letterSpacing: "0.2em" }}
-        >
-          LISTEN
-        </button>
+        <a
+            href="https://soundcloud.com/uforecordz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-condensed text-xs tracking-widest border px-4 py-2 transition-all duration-200 hover:bg-[#50e3c2] hover:text-black"
+            style={{
+                borderColor: "rgba(80,227,194,0.4)",
+                color: "#50e3c2",
+                letterSpacing: "0.2em",
+            }}
+            >
+            LISTEN
+            </a>
       </div>
       <button className="md:hidden flex flex-col gap-1.5" onClick={() => setMenuOpen(!menuOpen)}>
         {[0, 1, 2].map((i) => (

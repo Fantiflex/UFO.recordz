@@ -1,31 +1,26 @@
 import { useState } from "react";
-import logo from "./imports/logo.png";
 
-
-
-import UFOOrb from "./components/ufo/UFOOrb";
-import Hero from "./sections/Hero";
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/footer";
 
-import SectionHeader from "./components/ui/SectionHeader";
-import Tag from "./components/ui/Tag";
-import CharterParagraph from "./components/ui/CharterParagraph";
-
+import Hero from "./sections/Hero";
 import WhoWeAre from "./sections/WhoWeAre";
 import ConductCharter from "./sections/ConductCharter";
-import Events from "./sections/Events";
 import Releases from "./sections/Releases";
+import Events from "./sections/Events";
 import Artists from "./sections/Artists";
 
 import LabelPage from "./pages/LabelPage";
-import Valeurs from "./pages/ValeursPage";
-import Footer from "./components/layout/footer";
+import ValeursPage from "./pages/ValeursPage";
 
-function App() {
+import EventsPage from "./pages/EventsPage";
+import ContactPage from "./pages/ContactPage";
+
+export default function App() {
   const [active, setActive] = useState("home");
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
+    <div className="min-h-screen">
       <Navbar active={active} setActive={setActive} />
 
       {active === "home" && (
@@ -38,40 +33,14 @@ function App() {
           <Artists />
         </>
       )}
-      {active === "releases" && (
-        <div className="pt-24">
-          <Releases />
-        </div>
-      )}
-      {active === "events" && (
-        <div className="pt-24">
-          <Events />
-        </div>
-      )}
-      {active === "artists" && (
-        <div className="pt-24">
-          <Artists />
-        </div>
-      )}
-      {active === "label" && (
-        <div className="pt-24">
-          <LabelPage />
-        </div>
-      )}
-      {active === "valeurs" && (
-        <div className="pt-24">
-          <Valeurs />
-        </div>
-      )}
 
+      {active === "releases" && <Releases />}
+      {active === "artists" && <Artists />}
+      {active === "label" && <LabelPage />}
+      {active === "valeurs" && <ValeursPage />}
+      {active === "events" && <EventsPage />}
+      {active === "contact" && <ContactPage />}
       <Footer />
     </div>
   );
 }
-
-export default App;
-
-
-
-
-

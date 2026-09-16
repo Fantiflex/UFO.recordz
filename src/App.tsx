@@ -16,7 +16,7 @@ import va006Verso from "./imports/VA006_verso.JPG";
 import { EVENTS } from "./data/events";
 import { ARTISTS } from "./data/artists";
 import { RELEASES } from "./data/releases";
-const NAV_LINKS = ["UFO.recordz", "Events", "Label", "Valeurs", "Contact"];
+import { NAV_LINKS } from "./data/navigation";
 
 
 

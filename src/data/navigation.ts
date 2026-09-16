@@ -1,0 +1,1 @@
+export const NAV_LINKS = ["UFO.recordz", "Events", "Label", "Valeurs", "Contact"];

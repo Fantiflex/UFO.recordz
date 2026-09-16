@@ -24,6 +24,7 @@ import Navbar from "./components/layout/Navbar";
 
 import SectionHeader from "./components/ui/SectionHeader";
 import Tag from "./components/ui/Tag";
+import CharterParagraph from "./components/ui/CharterParagraph";
 
 
 
@@ -405,19 +406,6 @@ function ConductCharter() {
   );
 }
 
-function CharterParagraph({ children }: { children: React.ReactNode }) {
-  return (
-    <p
-      className="text-base font-light"
-      style={{
-        color: "rgba(226,226,228,0.58)",
-        lineHeight: 1.9,
-      }}
-    >
-      {children}
-    </p>
-  );
-}
 
 
 function Events() {

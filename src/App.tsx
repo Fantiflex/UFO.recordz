@@ -23,7 +23,7 @@ import Hero from "./sections/Hero";
 import Navbar from "./components/layout/Navbar";
 
 import SectionHeader from "./components/ui/SectionHeader";
-
+import Tag from "./components/ui/Tag";
 
 
 
@@ -173,6 +173,7 @@ function WhoWeAre() {
 }
 
 function Releases() {
+  
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
       <SectionHeader label="CATALOGUE" title="LATEST RELEASES" />
@@ -418,21 +419,6 @@ function CharterParagraph({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="font-mono text-xs px-2 py-0.5"
-      style={{
-        color: "rgba(80,227,194,0.7)",
-        background: "rgba(80,227,194,0.07)",
-        border: "1px solid rgba(80,227,194,0.12)",
-        letterSpacing: "0.1em",
-      }}
-    >
-      {children}
-    </span>
-  );
-}
 
 function Events() {
   return (

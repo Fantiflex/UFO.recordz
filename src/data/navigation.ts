@@ -1,7 +1,27 @@
 export const NAV_LINKS = [
-  { label: "UFO.recordz", value: "ufo-recordz" },
-  { label: "Events", value: "events" },
-  { label: "Label", value: "label" },
-  { label: "Valeurs", value: "valeurs" },
-  { label: "Contact", value: "contact" },
+  {
+    label: "UFO.recordz",
+    value: "ufo-recordz",
+    path: "/ufo-recordz",
+  },
+  {
+    label: "Events",
+    value: "events",
+    path: "/events",
+  },
+  {
+    label: "Label",
+    value: "label",
+    path: "/label",
+  },
+  {
+    label: "Valeurs",
+    value: "valeurs",
+    path: "/valeurs",
+  },
+  {
+    label: "Contact",
+    value: "contact",
+    path: "/contact",
+  },
 ];

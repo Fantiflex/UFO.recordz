@@ -4,21 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../imports/logo.png";
 import { NAV_LINKS } from "../../data/navigation";
 
-const ROUTES: Record<string, string> = {
-  home: "/",
-  events: "/events",
-  label: "/label",
-  valeurs: "/valeurs",
-  contact: "/contact",
-  "ufo-recordz": "/ufo-recordz",
-};
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const getPath = (value: string) => {
-    return ROUTES[value] ?? `/${value}`;
-  };
+ 
 
   return (
     <nav

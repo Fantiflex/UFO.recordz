@@ -94,7 +94,7 @@ function LabelPage() {
               <span
                 className="font-mono text-xs"
                 style={{
-                  color: "rgba(226,226,228,0.3)",
+                  color: "rgba(228, 228, 226, 0.3)",
                   letterSpacing: "0.15em",
                 }}
               >

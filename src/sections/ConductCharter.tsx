@@ -40,7 +40,7 @@ function ConductCharter() {
           <p
             className="mt-8 font-mono text-xs"
             style={{
-              color: "rgba(227, 228, 226, 0.35)",
+              color: "rgba(228, 228, 226, 0.35)",
               letterSpacing: "0.12em",
               lineHeight: 1.8,
             }}
@@ -101,7 +101,7 @@ function ConductCharter() {
           <div
             className="p-6"
             style={{
-              background: "rgba(80,227,194,0.035)",
+              background: "rgba(222, 227, 80, 0.04)",
               border: "1px solid rgba(210, 227, 80, 0.14)",
             }}
           >
@@ -140,7 +140,7 @@ function ConductCharter() {
             <p
               className="font-mono text-xs md:text-sm"
               style={{
-                color: "rgba(226,226,228,0.6)",
+                color: "rgba(227, 228, 226, 0.6)",
                 lineHeight: 1.8,
                 letterSpacing: "0.05em",
               }}

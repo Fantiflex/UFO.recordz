@@ -3,7 +3,7 @@ function CharterParagraph({ children }: { children: React.ReactNode }) {
     <p
       className="text-base font-light"
       style={{
-        color: "rgba(226,226,228,0.58)",
+        color: "rgba(228, 228, 226, 0.58)",
         lineHeight: 1.9,
       }}
     >

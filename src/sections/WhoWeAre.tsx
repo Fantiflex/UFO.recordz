@@ -19,7 +19,7 @@ function WhoWeAre() {
               lineHeight: 0.92,
               fontWeight: 800,
               letterSpacing: "-0.02em",
-              color: "#e2e2e4",
+              color: "#e4e4e2",
             }}
           >
             PAR NOUS,
@@ -34,7 +34,7 @@ function WhoWeAre() {
             style={{
               width: 60,
               height: 1,
-              background: "rgba(80,227,194,0.45)",
+              background: "rgba(188, 227, 80, 0.45)",
             }}
           />
         </div>
@@ -44,7 +44,7 @@ function WhoWeAre() {
           <p
             className="text-base md:text-lg font-light"
             style={{
-              color: "rgba(226,226,228,0.68)",
+              color: "rgba(228, 228, 226, 0.68)",
               lineHeight: 1.85,
             }}
           >
@@ -57,7 +57,7 @@ function WhoWeAre() {
           <p
             className="text-base font-light"
             style={{
-              color: "rgba(226,226,228,0.42)",
+              color: "rgba(228, 228, 226, 0.42)",
               lineHeight: 1.85,
             }}
           >
@@ -76,7 +76,7 @@ function WhoWeAre() {
                 className="font-mono text-xs px-3 py-1.5"
                 style={{
                   color: "#f4f445",
-                  border: "1px solid rgba(80,227,194,0.16)",
+                  border: "1px solid rgba(227, 227, 80, 0.16)",
                   background: "rgba(80,227,194,0.035)",
                   letterSpacing: "0.12em",
                 }}

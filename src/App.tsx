@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
-import Hero from "./sections/Hero";
-import WhoWeAre from "./sections/WhoWeAre";
-import ConductCharter from "./sections/ConductCharter";
-import Releases from "./sections/Releases";
-import Events from "./sections/Events";
-import Artists from "./sections/Artists";
+import Hero from "./components/sections/Hero";
+import WhoWeAre from "./components/sections/WhoWeAre";
+import ConductCharter from "./components/sections/ConductCharter";
+import Releases from "./components/sections/Releases";
+import Events from "./components/sections/Events";
+import Artists from "./components/sections/Artists";
 
 import LabelPage from "./pages/LabelPage";
 import ValeursPage from "./pages/ValeursPage";
@@ -16,35 +16,41 @@ import UFORecordzPage from "./pages/UFORecordzPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
 
-export default function App() {
-  const [active, setActive] = useState("home");
-
+function HomePage() {
   return (
-    <div className="min-h-screen">
-      <Navbar active={active} setActive={setActive} />
-
-      {active === "home" && (
-        <>
-          <Hero setActive={setActive} />
-          <WhoWeAre />
-          <ConductCharter />
-          <Releases />
-          <Events />
-          <Artists />
-          
-        </>
-      )}
-
-      {active === "releases" && <Releases />}
-      {active === "artists" && <Artists />}
-      {active === "label" && <LabelPage />}
-      {active === "valeurs" && <ValeursPage />}
-      {active === "events" && <EventsPage />}
-      {active === "contact" && <ContactPage />}
-      {active === "ufo-recordz" && <UFORecordzPage />}
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <WhoWeAre />
+      <ConductCharter />
+      <Releases />
+      <Events />
+      <Artists />
+    </>
   );
 }
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-black text-white">
+        <Navbar />
 
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+
+          <Route path="/ufo-recordz" element={<UFORecordzPage />} />
+
+          <Route path="/events" element={<EventsPage />} />
+
+          <Route path="/label" element={<LabelPage />} />
+
+          <Route path="/valeurs" element={<ValeursPage />} />
+
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+}

@@ -26,7 +26,7 @@ function Artists() {
             {/* Gradient overlay */}
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(180deg, transparent 40%, rgba(2,2,3,0.9) 100%)" }}
+              style={{ background: "linear-gradient(180deg, transparent 40%, rgba(3, 3, 2, 0.9) 100%)" }}
             />
 
             {/* Info */}
@@ -38,7 +38,7 @@ function Artists() {
                 {artist.name}
               </h3>
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.35)", letterSpacing: "0.1em" }}>
+                <span className="font-mono text-xs" style={{ color: "rgba(228, 228, 226, 0.35)", letterSpacing: "0.1em" }}>
                   {artist.origin}
                 </span>
                 <span className="font-mono text-xs" style={{ color: "rgba(205, 227, 80, 0.5)", letterSpacing: "0.1em" }}>

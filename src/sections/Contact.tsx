@@ -13,7 +13,7 @@ export default function Contact() {
           <p
             className="text-base font-light"
             style={{
-              color: "rgba(226,226,228,0.6)",
+              color: "rgba(227, 228, 226, 0.6)",
               lineHeight: 1.8,
             }}
           >
@@ -38,13 +38,13 @@ export default function Contact() {
               className="flex items-center justify-between p-5"
               style={{
                 background: "var(--card)",
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
+                borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
               }}
             >
               <span
                 className="font-mono text-xs"
                 style={{
-                  color: "rgba(226,226,228,0.3)",
+                  color: "rgba(228, 228, 226, 0.3)",
                   letterSpacing: "0.15em",
                 }}
               >
@@ -57,7 +57,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
-                  style={{ color: "rgba(80,227,194,0.7)" }}
+                  style={{ color: "rgba(200, 227, 80, 0.7)" }}
                 >
                   FORMULAIRE
                 </a>
@@ -65,7 +65,7 @@ export default function Contact() {
                 <a
                   href={`mailto:${value}`}
                   className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
-                  style={{ color: "rgba(80,227,194,0.7)" }}
+                  style={{ color: "rgba(190, 227, 80, 0.7)" }}
                 >
                   {value}
                 </a>

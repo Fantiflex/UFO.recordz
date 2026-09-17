@@ -48,26 +48,26 @@ function Releases() {
             </div>
 
             <div>
-              <p className="font-mono text-xs mb-1" style={{ color: "rgba(226,226,228,0.35)", letterSpacing: "0.15em" }}>
+              <p className="font-mono text-xs mb-1" style={{ color: "rgba(228, 228, 226, 0.35)", letterSpacing: "0.15em" }}>
                 {r.artist}
               </p>
               <h3
                 className="font-condensed text-2xl font-700 mb-4"
-                style={{ fontWeight: 700, letterSpacing: "0.04em", color: "#e2e2e4" }}
+                style={{ fontWeight: 700, letterSpacing: "0.04em", color: "#e3e4e2" }}
               >
                 {r.title}
               </h3>
               <div className="flex items-center gap-4">
                 <Tag>{r.bpm}</Tag>
                 <Tag>{r.key}</Tag>
-                <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.25)", letterSpacing: "0.08em" }}>
+                <span className="font-mono text-xs" style={{ color: "rgba(228, 228, 226, 0.25)", letterSpacing: "0.08em" }}>
                   {r.format}
                 </span>
               </div>
             </div>
 
             <div className="mt-6 flex items-center justify-between">
-              <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.2)", letterSpacing: "0.1em" }}>
+              <span className="font-mono text-xs" style={{ color: "rgba(228, 228, 226, 0.2)", letterSpacing: "0.1em" }}>
                 {r.date}
               </span>
               <span

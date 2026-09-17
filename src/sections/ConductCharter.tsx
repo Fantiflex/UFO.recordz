@@ -33,14 +33,14 @@ function ConductCharter() {
             style={{
               width: 60,
               height: 1,
-              background: "rgba(80,227,194,0.45)",
+              background: "rgba(207, 227, 80, 0.45)",
             }}
           />
 
           <p
             className="mt-8 font-mono text-xs"
             style={{
-              color: "rgba(226,226,228,0.35)",
+              color: "rgba(227, 228, 226, 0.35)",
               letterSpacing: "0.12em",
               lineHeight: 1.8,
             }}
@@ -102,7 +102,7 @@ function ConductCharter() {
             className="p-6"
             style={{
               background: "rgba(80,227,194,0.035)",
-              border: "1px solid rgba(80,227,194,0.14)",
+              border: "1px solid rgba(210, 227, 80, 0.14)",
             }}
           >
             <p
@@ -124,7 +124,7 @@ function ConductCharter() {
             className="font-condensed text-2xl md:text-3xl"
             style={{
               fontWeight: 700,
-              color: "#50e3c2",
+              color: "#c1e350",
               letterSpacing: "0.03em",
             }}
           >

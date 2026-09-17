@@ -9,7 +9,7 @@ function Footer() {
           SECTOR-9 ◈
         </span>
         <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.2)", letterSpacing: "0.1em" }}>
-          © 2026 SECTOR-9 RECORDS · BERLIN, DE · ALL RIGHTS RESERVED
+          © UFO6TEM · PARIS, FR · ALL RIGHTS RESERVED
         </span>
         <div className="flex gap-6">
           {["SOUNDCLOUD", "RA", "BANDCAMP"].map((s) => (

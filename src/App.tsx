@@ -12,7 +12,7 @@ import Artists from "./sections/Artists";
 
 import LabelPage from "./pages/LabelPage";
 import ValeursPage from "./pages/ValeursPage";
-
+import UFORecordzPage from "./pages/UFORecordzPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
 
@@ -31,6 +31,7 @@ export default function App() {
           <Releases />
           <Events />
           <Artists />
+          <UFORecordzPage />
         </>
       )}
 
@@ -40,6 +41,7 @@ export default function App() {
       {active === "valeurs" && <ValeursPage />}
       {active === "events" && <EventsPage />}
       {active === "contact" && <ContactPage />}
+      {active === "ufo-recordz" && <UFORecordzPage />}
       <Footer />
     </div>
   );

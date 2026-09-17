@@ -77,7 +77,7 @@ function UFOOrb() {
         <linearGradient id="g-band" x1="0.5" y1="0" x2="0.5" y2="1">
           <stop offset="0%" stopColor="rgba(140,255,230,0.22)" />
           <stop offset="22%" stopColor="rgba(215,255,248,0.96)" />
-          <stop offset="44%" stopColor="rgba(80,227,194,1)" />
+          <stop offset="44%" stopColor="rgb(207, 239, 137)" />
           <stop offset="68%" stopColor="rgba(22,85,72,0.88)" />
           <stop offset="100%" stopColor="rgba(4,18,15,0.45)" />
         </linearGradient>
@@ -91,8 +91,8 @@ function UFOOrb() {
           <stop offset="100%" stopColor="#040908" />
         </radialGradient>
         <radialGradient id="g-port" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(180,255,238,1)" />
-          <stop offset="38%" stopColor="rgba(80,227,194,0.85)" />
+          <stop offset="0%" stopColor="rgb(223, 251, 101)" />
+          <stop offset="38%" stopColor="rgba(216, 250, 93, 0.85)" />
           <stop offset="75%" stopColor="rgba(28,108,88,0.35)" />
           <stop offset="100%" stopColor="rgba(0,0,0,0)" />
         </radialGradient>

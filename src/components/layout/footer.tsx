@@ -6,7 +6,7 @@ function Footer() {
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="font-condensed tracking-widest text-sm" style={{ color: "#50e3c2", letterSpacing: "0.3em" }}>
-          SECTOR-9 ◈
+          RAVE ON ◈
         </span>
         <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.2)", letterSpacing: "0.1em" }}>
           © UFO6TEM · PARIS, FR · ALL RIGHTS RESERVED

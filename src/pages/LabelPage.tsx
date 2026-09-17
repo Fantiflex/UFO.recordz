@@ -6,15 +6,22 @@ import va001Recto from "../imports/VA001_recto.JPG";
 import va001Verso from "../imports/VA001_verso.JPG";
 import va006Recto from "../imports/VA006_recto.JPG";
 import va006Verso from "../imports/VA006_verso.JPG";
+import va004Recto from "../imports/VA004_recto.JPG";
+import va004Verso from "../imports/VA004_verso.JPG";
+import va002Verso from "../imports/VA002_verso.JPG";
+import va002Recto from "../imports/VA002_recto.JPG";
+
 
 import SectionHeader from "../components/ui/SectionHeader";
 
 function LabelPage() {
   const labelVisuals = [
-    [va003Recto, va003Verso],
-    [va005Recto, va005Verso],
-    [va001Recto, va001Verso],
     [va006Recto, va006Verso],
+    [va005Recto, va005Verso],
+    [va004Verso, va004Recto],
+    [va003Recto, va003Verso],
+    [va002Verso, va002Recto],
+    [va001Recto, va001Verso],
   ];
 
   return (

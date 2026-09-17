@@ -20,29 +20,52 @@ export default function UFORecordzPage() {
 
         {/* Intro */}
         <div className="mb-16">
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-lime-300/60 mb-5">
+        <p
+            className="font-mono text-xs uppercase mb-5"
+            style={{
+            color: "rgba(240, 255, 76, 0.55)",
+            letterSpacing: "0.3em",
+            }}
+        >
             UFO.recordz
-          </p>
+        </p>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <span className="font-condensed text-5xl md:text-7xl uppercase tracking-tight text-white">
-              Collectif.
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <span
+            className="font-condensed text-5xl md:text-7xl uppercase"
+            style={{ color: "#e4e4e2" }}
+            >
+            Collectif.
             </span>
 
-            <span className="font-condensed text-5xl md:text-7xl uppercase tracking-tight text-lime-300">
-              Label.
+            <span
+            className="font-condensed text-5xl md:text-7xl uppercase"
+            style={{ color: "#e3de50" }}
+            >
+            Label.
             </span>
 
-            <span className="font-condensed text-5xl md:text-7xl uppercase tracking-tight text-white">
-              Soundsystem.
+            <span
+            className="font-condensed text-5xl md:text-7xl uppercase"
+            style={{ color: "#e4e4e2" }}
+            >
+            Soundsystem.
             </span>
-          </div>
+        </div>
 
-          <p className="mt-8 max-w-2xl font-mono text-sm md:text-base leading-relaxed text-white/50">
+        <div
+            className="mt-6 w-16 h-px"
+            style={{ background: "#e3e050" }}
+        />
+
+        <p
+            className="mt-8 max-w-2xl font-mono text-sm md:text-base leading-relaxed"
+            style={{ color: "rgba(228, 228, 226, 0.5)" }}
+        >
             UFO.recordz réunit artistes, organisateur·ices et passionné·es autour
-            d'une même vision : créer des espaces de fête, produire de la musique
+            d'une même vision : créer des espaces de fête pour toustes, produire de la musique
             et faire vivre une culture électronique libre, collective et indépendante.
-          </p>
+        </p>
         </div>
 
         {/* Gallery */}
@@ -77,6 +100,74 @@ export default function UFORecordzPage() {
           </div>
 
         </div>
+        <section className="mt-24 border-t border-white/10 pt-12">
+            <p
+                className="font-mono text-xs uppercase mb-6"
+                style={{
+                color: "rgba(220, 227, 80, 0.95)",
+                letterSpacing: "0.3em",
+                }}
+            >
+                Mentions légales
+            </p>
+
+            <div
+                className="max-w-3xl font-mono text-sm leading-relaxed"
+                style={{ color: "rgba(226, 226, 228, 0.6)" }}
+            >
+                <p className="mb-6">
+                Le site uforecordz.fr est édité par l'association UFO6TEM
+                (opérant sous le nom d'usage et label{" "}
+                <span style={{ color: "#c8e35094" }}>UFO.recordz</span>).
+                </p>
+
+                <ul className="space-y-3">
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>Statut juridique :</span>{" "}
+                    Association loi 1901 à but non lucratif
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>Numéro RNA :</span>{" "}
+                    W784011328
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>SIREN :</span>{" "}
+                    928 192 129
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>SIRET du siège :</span>{" "}
+                    928 192 129 00015
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>Adresse du siège social :</span>{" "}
+                    17 rue Pierre Bonnard, 78370 Plaisir
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>Courriel :</span>{" "}
+                    <a
+                    href="mailto:contact@uforecordz.fr"
+                    className="transition-colors duration-200 hover:text-[#50e3c2]"
+                    style={{ color: "#c8e350" }}
+                    >
+                    contact@uforecordz.fr
+                    </a>
+                </li>
+
+                <li>
+                    <span style={{ color: "#e2e2e4" }}>Objet :</span>{" "}
+                    Promotion et diffusion de la culture free party, organisation
+                    d'événements culturels inclusifs, mise à disposition de matériel
+                    scénique et accompagnement artistique gratuit pour les producteurs
+                    émergents.
+                </li>
+                </ul>
+            </div>
+            </section>
       </section>
     </main>
   );

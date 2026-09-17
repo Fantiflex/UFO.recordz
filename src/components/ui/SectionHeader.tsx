@@ -12,7 +12,7 @@ function SectionHeader({ label, title }: { label: string; title: string }) {
           {title}
         </h2>
       </div>
-      <div style={{ width: 40, height: 1, background: "rgba(183, 213, 66, 0.3)" }} />
+      <div style={{ width: 40, height: 1, background: "rgba(198, 213, 66, 0.3)" }} />
     </div>
   );
 }

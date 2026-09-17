@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/footer";
+import Footer from "./components/layout/Footer";
 
 import Hero from "./sections/Hero";
 import WhoWeAre from "./sections/WhoWeAre";
@@ -46,3 +46,5 @@ export default function App() {
     </div>
   );
 }
+
+

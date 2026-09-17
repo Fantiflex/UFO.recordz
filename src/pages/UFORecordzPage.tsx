@@ -18,6 +18,7 @@ export default function UFORecordzPage() {
     <main className="pt-24">
       <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
           <div className="md:col-span-2">
             <img
               src={photos[0]}
@@ -38,7 +39,14 @@ export default function UFORecordzPage() {
               alt="UFO.recordz Terminus"
               className="w-full object-cover"
             />
+
+            <img
+              src={photos[2]}
+              alt="UFO.recordz crowd 2"
+              className="w-full object-cover"
+            />
           </div>
+
         </div>
       </section>
     </main>

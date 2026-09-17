@@ -2,7 +2,7 @@ function SectionHeader({ label, title }: { label: string; title: string }) {
   return (
     <div className="mb-12 flex items-end justify-between border-b pb-6" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
       <div>
-        <p className="font-mono text-xs mb-3" style={{ color: "rgba(80,227,194,0.5)", letterSpacing: "0.3em" }}>
+        <p className="font-mono text-xs mb-3" style={{ color: "rgba(227, 200, 80, 0.5)", letterSpacing: "0.3em" }}>
           {label}
         </p>
         <h2

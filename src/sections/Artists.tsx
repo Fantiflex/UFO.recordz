@@ -41,7 +41,7 @@ function Artists() {
                 <span className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.35)", letterSpacing: "0.1em" }}>
                   {artist.origin}
                 </span>
-                <span className="font-mono text-xs" style={{ color: "rgba(80,227,194,0.5)", letterSpacing: "0.1em" }}>
+                <span className="font-mono text-xs" style={{ color: "rgba(205, 227, 80, 0.5)", letterSpacing: "0.1em" }}>
                   {artist.releases} REL
                 </span>
               </div>
@@ -50,7 +50,7 @@ function Artists() {
             {/* Hover scan line */}
             <div
               className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{ background: "rgba(80,227,194,0.5)" }}
+              style={{ background: "rgba(207, 227, 80, 0.5)" }}
             />
           </div>
         ))}

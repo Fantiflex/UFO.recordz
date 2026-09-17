@@ -24,7 +24,7 @@ function Navbar({ active, setActive }: { active: string; setActive: (s: string) 
             key={link}
             onClick={() => setActive(link.toLowerCase())}
             className="font-condensed text-xs tracking-widest transition-colors duration-200"
-            style={{ color: active === link.toLowerCase() ? "#50e3c2" : "rgba(226,226,228,0.45)", letterSpacing: "0.2em" }}
+            style={{ color: active === link.toLowerCase() ? "#e0e350" : "rgba(227, 228, 226, 0.45)", letterSpacing: "0.2em" }}
           >
             {link.toUpperCase()}
           </button>
@@ -35,8 +35,8 @@ function Navbar({ active, setActive }: { active: string; setActive: (s: string) 
             rel="noopener noreferrer"
             className="font-condensed text-xs tracking-widest border px-4 py-2 transition-all duration-200 hover:bg-[#50e3c2] hover:text-black"
             style={{
-                borderColor: "rgba(80,227,194,0.4)",
-                color: "#50e3c2",
+                borderColor: "rgba(200, 227, 80, 0.4)",
+                color: "#d7e350",
                 letterSpacing: "0.2em",
             }}
             >

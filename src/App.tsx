@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Navbar from "./components/layout/Navbar";
-import footer from "./components/layout/Footer";
+import Footer from "./components/layout/Footer";
 
 import Hero from "./sections/Hero";
 import WhoWeAre from "./sections/WhoWeAre";
@@ -42,7 +42,7 @@ export default function App() {
       {active === "events" && <EventsPage />}
       {active === "contact" && <ContactPage />}
       {active === "ufo-recordz" && <UFORecordzPage />}
-      <footer />
+      <Footer />
     </div>
   );
 }

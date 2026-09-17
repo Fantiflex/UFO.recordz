@@ -1,8 +1,8 @@
 
 import SoundManifestive from "../data/images/ufo-recordz/SoundManifestive.jpg";
 import SDRAVEfoule from "../data/images/ufo-recordz/SDRAVEfoule.jpg";
-import SDRAVEfoule2 from "../data/images/ufo-recordz/SDRAVEfoule2.jpg";
-import TerminusFoule from "../data/images/ufo-recordz/TerminusFoule.jpg";
+import SDRAVEfoule2 from "../data/images/ufo-recordz/SDRAVEfoule2.JPG";
+import TerminusFoule from "../data/images/ufo-recordz/TerminusFoule.JPG";
 
 
 const photos = [

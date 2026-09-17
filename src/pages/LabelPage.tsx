@@ -27,7 +27,7 @@ function LabelPage() {
           <p
             className="text-base font-light leading-relaxed mb-6"
             style={{
-              color: "rgba(226,226,228,0.6)",
+              color: "rgba(228, 228, 226, 0.6)",
               lineHeight: 1.8,
             }}
           >
@@ -51,7 +51,7 @@ function LabelPage() {
                   className="font-condensed text-4xl font-800 mb-1"
                   style={{
                     fontWeight: 800,
-                    color: "#50e3c2",
+                    color: "#dee350",
                   }}
                 >
                   {num}
@@ -60,7 +60,7 @@ function LabelPage() {
                 <div
                   className="font-mono text-xs"
                   style={{
-                    color: "rgba(227, 228, 226, 0.3)",
+                    color: "rgba(228, 228, 226, 0.3)",
                     letterSpacing: "0.15em",
                   }}
                 >

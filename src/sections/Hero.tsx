@@ -51,7 +51,7 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
           <button
             onClick={() => setActive("releases")}
             className="font-condensed text-xs tracking-widest px-8 py-3.5 transition-all duration-300 hover:brightness-90"
-            style={{ background: "#d4e350", color: "#020203", letterSpacing: "0.2em", fontWeight: 600 }}
+            style={{ background: "#d4e350", color: "#030302", letterSpacing: "0.2em", fontWeight: 600 }}
           >
             NEW RELEASES
           </button>
@@ -70,7 +70,7 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
         className="absolute bottom-0 left-0 right-0"
         style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(195, 227, 80, 0.12), transparent)" }}
       />
-      <div className="absolute bottom-8 font-mono text-xs" style={{ color: "rgba(178, 227, 80, 0.3)", letterSpacing: "0.2em" }}>
+      <div className="absolute bottom-8 font-mono text-xs" style={{ color: "rgba(207, 227, 80, 0.3)", letterSpacing: "0.2em" }}>
         
       </div>
     </section>

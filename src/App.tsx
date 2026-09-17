@@ -41,7 +41,7 @@ export default function App() {
       {active === "valeurs" && <ValeursPage />}
       {active === "events" && <EventsPage />}
       {active === "contact" && <ContactPage />}
-      {active === "ufo.recordz" && <UFORecordzPage />}
+      {active === "ufo-recordz" && <UFORecordzPage />}
       <Footer />
     </div>
   );

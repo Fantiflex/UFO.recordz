@@ -20,15 +20,21 @@ function Navbar({ active, setActive }: { active: string; setActive: (s: string) 
     </button>
       <div className="hidden md:flex items-center gap-8">
         {NAV_LINKS.map((link) => (
-          <button
-            key={link}
-            onClick={() => setActive(link.toLowerCase())}
-            className="font-condensed text-xs tracking-widest transition-colors duration-200"
-            style={{ color: active === link.toLowerCase() ? "#e0e350" : "rgba(227, 228, 226, 0.45)", letterSpacing: "0.2em" }}
-          >
-            {link.toUpperCase()}
-          </button>
-        ))}
+            <button
+                key={link.value}
+                onClick={() => setActive(link.value)}
+                className="font-condensed text-xs tracking-widest transition-colors duration-200"
+                style={{
+                color:
+                    active === link.value
+                    ? "#e0e350"
+                    : "rgba(186, 216, 33, 0.45)",
+                letterSpacing: "0.2em",
+                }}
+            >
+                {link.label.toUpperCase()}
+            </button>
+            ))}
         <a
             href="https://soundcloud.com/uforecordz"
             target="_blank"
@@ -53,14 +59,24 @@ function Navbar({ active, setActive }: { active: string; setActive: (s: string) 
         <div className="absolute top-full left-0 right-0 flex flex-col p-8 gap-6 md:hidden"
           style={{ background: "rgba(2,2,3,0.98)", borderBottom: "1px solid rgba(80,227,194,0.1)" }}>
           {NAV_LINKS.map((link) => (
-            <button key={link}
-              onClick={() => { setActive(link.toLowerCase()); setMenuOpen(false); }}
-              className="font-condensed text-sm tracking-widest text-left"
-              style={{ color: active === link.toLowerCase() ? "#f4f445" : "rgba(226,226,228,0.45)", letterSpacing: "0.2em" }}
+            <button
+                key={link.value}
+                onClick={() => {
+                setActive(link.value);
+                setMenuOpen(false);
+                }}
+                className="font-condensed text-sm tracking-widest text-left"
+                style={{
+                color:
+                    active === link.value
+                    ? "#f4f445"
+                    : "rgba(226,226,228,0.45)",
+                letterSpacing: "0.2em",
+                }}
             >
-              {link.toUpperCase()}
+                {link.label.toUpperCase()}
             </button>
-          ))}
+            ))}
         </div>
       )}
     </nav>

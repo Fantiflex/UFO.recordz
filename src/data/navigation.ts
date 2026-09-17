@@ -1,1 +1,7 @@
-export const NAV_LINKS = ["UFO.recordz", "Events", "Label", "Valeurs", "Contact"];
+export const NAV_LINKS = [
+  { label: "UFO.recordz", value: "ufo-recordz" },
+  { label: "Events", value: "events" },
+  { label: "Label", value: "label" },
+  { label: "Valeurs", value: "valeurs" },
+  { label: "Contact", value: "contact" },
+];

@@ -36,7 +36,7 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
         {/* Main heading */}
         <h1
           className="font-condensed animate-fade-in-up delay-300"
-          style={{ fontSize: "clamp(3.5rem, 12vw, 9rem)", lineHeight: 0.88, letterSpacing: "-0.02em", fontWeight: 800, color: "#e2e2e4" }}
+          style={{ fontSize: "clamp(3.5rem, 12vw, 9rem)", lineHeight: 0.88, letterSpacing: "-0.02em", fontWeight: 800, color: "#e4e4e2" }}
         >
           UFO<br />
           <span style={{ color: "rgba(228, 228, 226, 0.18)", WebkitTextStroke: "1px rgba(228, 228, 226, 0.28)" }}>.recordz</span><br />

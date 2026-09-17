@@ -15,7 +15,7 @@ function Events() {
             style={{ background: "var(--card)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
           >
             <div className="flex-none">
-              <span className="font-mono text-xs" style={{ color: "rgba(80,227,194,0.3)", letterSpacing: "0.15em" }}>
+              <span className="font-mono text-xs" style={{ color: "rgba(193, 227, 80, 0.3)", letterSpacing: "0.15em" }}>
                 {ev.id}
               </span>
             </div>
@@ -27,7 +27,7 @@ function Events() {
               >
                 {ev.name}
               </h3>
-              <p className="text-sm font-light" style={{ color: "rgba(226,226,228,0.4)" }}>
+              <p className="text-sm font-light" style={{ color: "rgba(228, 228, 226, 0.4)" }}>
                 {ev.venue}
               </p>
             </div>
@@ -39,8 +39,8 @@ function Events() {
                     key={a}
                     className="font-mono text-xs px-2 py-0.5"
                     style={{
-                      color: "rgba(226,226,228,0.35)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      color: "rgba(227, 228, 226, 0.35)",
+                      border: "1px solid rgba(255, 255, 255, 0.06)",
                       letterSpacing: "0.08em",
                       whiteSpace: "nowrap",
                     }}
@@ -52,10 +52,10 @@ function Events() {
             </div>
 
             <div className="flex-none text-right">
-              <p className="font-condensed text-sm mb-1" style={{ letterSpacing: "0.1em", color: "rgba(226,226,228,0.7)" }}>
+              <p className="font-condensed text-sm mb-1" style={{ letterSpacing: "0.1em", color: "rgba(228, 228, 226, 0.7)" }}>
                 {ev.date}
               </p>
-              <p className="font-mono text-xs" style={{ color: "rgba(226,226,228,0.3)", letterSpacing: "0.08em" }}>
+              <p className="font-mono text-xs" style={{ color: "rgba(228, 228, 226, 0.3)", letterSpacing: "0.08em" }}>
                 {ev.time}
               </p>
             </div>
@@ -68,13 +68,13 @@ function Events() {
                   background: ev.status === "SOLD OUT"
                     ? "rgba(255,255,255,0.04)"
                     : ev.status === "PRESALE"
-                    ? "rgba(139,128,249,0.1)"
+                    ? "rgba(243, 249, 128, 0.1)"
                     : "rgba(80,227,194,0.1)",
                   color: ev.status === "SOLD OUT"
-                    ? "rgba(226,226,228,0.25)"
+                    ? "rgba(228, 228, 226, 0.25)"
                     : ev.status === "PRESALE"
-                    ? "#8b80f9"
-                    : "#50e3c2",
+                    ? "#d3f980"
+                    : "#b7e350",
                   border: `1px solid ${ev.status === "SOLD OUT" ? "rgba(255,255,255,0.06)" : ev.status === "PRESALE" ? "rgba(139,128,249,0.25)" : "rgba(80,227,194,0.2)"}`,
                 }}
               >

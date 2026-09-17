@@ -1,5 +1,5 @@
-import { EVENTS } from "../data/events";
-import SectionHeader from "../components/ui/SectionHeader";
+import { EVENTS } from "../../data/events";
+import SectionHeader from "../ui/SectionHeader";
 
 
 

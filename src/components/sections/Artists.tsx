@@ -1,6 +1,6 @@
-import SectionHeader from "../components/ui/SectionHeader";
-import Tag from "../components/ui/Tag";
-import { ARTISTS } from "../data/artists";
+import SectionHeader from "../ui/SectionHeader";
+import Tag from "../ui/Tag";
+import { ARTISTS } from "../../data/artists";
 
 
 

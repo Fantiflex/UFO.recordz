@@ -1,4 +1,4 @@
-import UFOOrb from "../components/ufo/UFOOrb";
+import UFOOrb from "../ufo/UFOOrb";
 
 function Hero({ setActive }: { setActive: (s: string) => void }) {
   return (

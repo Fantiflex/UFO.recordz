@@ -1,5 +1,5 @@
 import SectionHeader from "../components/ui/SectionHeader";
-import ConductCharter from "../sections/ConductCharter";
+import ConductCharter from "../components/sections/ConductCharter";
 
 
 export default function ValeursPage() {

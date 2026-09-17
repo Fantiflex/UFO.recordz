@@ -4,12 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../imports/logo.png";
 import { NAV_LINKS } from "../../data/navigation";
 
-
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
- 
 
   return (
     <nav
@@ -32,20 +28,16 @@ function Navbar() {
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8">
         {NAV_LINKS.map((link) => (
-            <NavLink
-                key={link.value}
-                to={link.path}
-                className="font-condensed text-xs tracking-widest transition-colors duration-200"
-                style={({ isActive }) => ({
-                color: isActive
-                    ? "#e0e350"
-                    : "rgba(186, 216, 33, 0.45)",
-                letterSpacing: "0.2em",
-                })}
-            >
-                {link.label.toUpperCase()}
-            </NavLink>
-            ))}
+          <NavLink
+            key={link.value}
+            to={link.path}
+            className="font-condensed text-xs tracking-widest transition-colors duration-200"
+            style={({ isActive }) => ({
+              color: isActive
+                ? "#e0e350"
+                : "rgba(186, 216, 33, 0.45)",
+              letterSpacing: "0.2em",
+            })}
           >
             {link.label.toUpperCase()}
           </NavLink>
@@ -98,7 +90,7 @@ function Navbar() {
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.value}
-              to={getPath(link.value)}
+              to={link.path}
               onClick={() => setMenuOpen(false)}
               className="font-condensed text-sm tracking-widest text-left"
               style={({ isActive }) => ({

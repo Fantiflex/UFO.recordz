@@ -1,6 +1,6 @@
-import { RELEASES } from "../data/releases";
-import SectionHeader from "../components/ui/SectionHeader";
-import Tag from "../components/ui/Tag";
+import { RELEASES } from "../../data/releases";
+import SectionHeader from "../ui/SectionHeader";
+import Tag from "../ui/Tag";
 import CharterParagraph from "@/components/ui/CharterParagraph";
 
 function ConductCharter() {

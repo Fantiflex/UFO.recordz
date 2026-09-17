@@ -1,4 +1,4 @@
-import SectionHeader from "../components/ui/SectionHeader";
+import SectionHeader from "../ui/SectionHeader";
 
 export default function Contact() {
   return (

@@ -60,7 +60,7 @@ function LabelPage() {
                 <div
                   className="font-mono text-xs"
                   style={{
-                    color: "rgba(226,226,228,0.3)",
+                    color: "rgba(227, 228, 226, 0.3)",
                     letterSpacing: "0.15em",
                   }}
                 >
@@ -108,7 +108,7 @@ function LabelPage() {
                   rel="noopener noreferrer"
                   className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
                   style={{
-                    color: "rgba(80,227,194,0.7)",
+                    color: "rgba(227, 224, 80, 0.7)",
                     letterSpacing: "0.08em",
                   }}
                 >
@@ -119,7 +119,7 @@ function LabelPage() {
                   href={`mailto:${value}`}
                   className="font-mono text-xs transition-colors hover:text-[#50e3c2]"
                   style={{
-                    color: "rgba(80,227,194,0.7)",
+                    color: "rgba(227, 207, 80, 0.7)",
                     letterSpacing: "0.08em",
                   }}
                 >
@@ -129,7 +129,7 @@ function LabelPage() {
                 <span
                   className="font-mono text-xs"
                   style={{
-                    color: "rgba(80,227,194,0.7)",
+                    color: "rgba(188, 227, 80, 0.7)",
                     letterSpacing: "0.08em",
                   }}
                 >
@@ -145,7 +145,7 @@ function LabelPage() {
       <div className="mt-24">
         <div
           className="mb-8 flex items-center gap-4"
-          style={{ color: "rgba(226,226,228,0.35)" }}
+          style={{ color: "rgba(228, 228, 226, 0.35)" }}
         >
           <span
             className="font-mono text-xs"

@@ -159,7 +159,7 @@ function UFOOrb() {
         fill="url(#g-port)" filter="url(#f-port-glow)" opacity={0.65}
         className="animate-pulse-glow" />
       <ellipse cx={cx} cy={pCy} rx={pRx + 3} ry={pRy + 2}
-        fill="rgba(24,44,40,0.9)" stroke="rgba(80,227,194,0.45)" strokeWidth={1} />
+        fill="rgba(24,44,40,0.9)" stroke="rgb(207, 239, 137)" strokeWidth={1} />
       <ellipse cx={cx} cy={pCy} rx={pRx} ry={pRy} fill="url(#g-port)" />
 
       {/* DISC TOP SURFACE — outer rim top arc to chrome band */}

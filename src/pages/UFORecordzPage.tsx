@@ -116,7 +116,7 @@ export default function UFORecordzPage() {
                 style={{ color: "rgba(226, 226, 228, 0.6)" }}
             >
                 <p className="mb-6">
-                Le site uforecordz.fr est édité par l'association UFO6TEM
+                Le site uforecordz.fr est opéré par l'association UFO6TEM
                 (opérant sous le nom d'usage et label{" "}
                 <span style={{ color: "#c8e35094" }}>UFO.recordz</span>).
                 </p>

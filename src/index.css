@@ -123,3 +123,21 @@ body {
 
 /* Preserve 3-D transforms on children */
 .preserve-3d { transform-style: preserve-3d; }
+
+@keyframes trustedTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trusted-ticker {
+  animation: trustedTicker 30s linear infinite;
+}
+
+.trusted-ticker:hover {
+  animation-play-state: paused;
+}

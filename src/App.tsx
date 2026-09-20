@@ -9,6 +9,7 @@ import ConductCharter from "./components/sections/ConductCharter";
 import Releases from "./components/sections/Releases";
 import Events from "./components/sections/Events";
 import Artists from "./components/sections/Artists";
+import TrustedBy from "./components/sections/TrustedBy";
 
 import LabelPage from "./pages/LabelPage";
 import ValeursPage from "./pages/ValeursPage";
@@ -20,11 +21,12 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <TrustedBy />
       <WhoWeAre />
-      <ConductCharter />
       <Releases />
       <Events />
       <Artists />
+      
     </>
   );
 }

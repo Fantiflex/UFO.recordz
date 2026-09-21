@@ -31,7 +31,7 @@ export default function Contact() {
           {[
             ["BOOKING", "contact@uforecordz.fr"],
             ["DEMOS", "https://forms.gle/GU8uJ4fi4ypd4mKYA"],
-            ["PRESS", "fantine@uforecordz.fr"],
+            ["PRESSE", "fantine@uforecordz.fr"],
           ].map(([label, value]) => (
             <div
               key={label}

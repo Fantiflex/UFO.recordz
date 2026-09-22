@@ -61,7 +61,7 @@ function EventCard({ event: ev }: EventCardProps) {
         <span
           className="font-mono text-xs"
           style={{
-            color: "rgba(193, 227, 80, 0.3)",
+            color: "rgba(227, 222, 80, 0.3)",
             letterSpacing: "0.15em",
           }}
         >
@@ -151,21 +151,21 @@ function EventCard({ event: ev }: EventCardProps) {
                 ? "rgba(255,255,255,0.04)"
                 : ev.status === "PRESALE"
                 ? "rgba(243,249,128,0.1)"
-                : "rgba(80,227,194,0.1)",
+                : "rgba(200, 227, 80, 0.1)",
 
             color:
               ev.status === "SOLD OUT"
                 ? "rgba(228,228,226,0.25)"
                 : ev.status === "PRESALE"
-                ? "#d3f980"
-                : "#b7e350",
+                ? "#f9db80"
+                : "#f9db80",
 
             border: `1px solid ${
               ev.status === "SOLD OUT"
                 ? "rgba(255,255,255,0.06)"
                 : ev.status === "PRESALE"
-                ? "rgba(139,128,249,0.25)"
-                : "rgba(80,227,194,0.2)"
+                ? "rgba(239, 249, 128, 0.25)"
+                : "rgba(227, 224, 80, 0.2)"
             }`,
           }}
         >

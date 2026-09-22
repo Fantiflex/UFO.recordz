@@ -4,7 +4,7 @@ import PastEvents from "../components/sections/PastEvents";
 
 export default function EventsPage() {
   return (
-    <main className="pt-24">
+    <main className="pt-15">
       <UpcomingEvents />
       <PlayedWithUs />
       <PastEvents />

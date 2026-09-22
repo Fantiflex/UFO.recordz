@@ -18,7 +18,7 @@ function PastEvents() {
   }
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+    <section className="py-15 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
       <SectionHeader
         label="LIVE OPERATIONS"
         title="PASSED EVENTS"

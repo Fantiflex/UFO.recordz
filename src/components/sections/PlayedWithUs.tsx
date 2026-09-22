@@ -45,8 +45,8 @@ function PlayedWithUs() {
   const repeatedArtists = [...artists, ...artists];
 
   return (
-    <section className="py-16">
-      <div className="px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+    <section className="py-10">
+      <div className="px-6 md:px-10 lg:px-15 max-w-6xl mx-auto">
         <SectionHeader
           label=""
           title="IELLES ONT JOUÉ CHEZ NOUS"
@@ -80,7 +80,7 @@ function PlayedWithUs() {
               <span
                 className="font-mono text-xs"
                 style={{
-                  color: "#c8e350",
+                  color: "#e3cf50",
                   opacity: 0.7,
                 }}
               >
@@ -95,7 +95,7 @@ function PlayedWithUs() {
                     rel="noopener noreferrer"
                     className="font-mono text-[10px]"
                     style={{
-                      color: "#c8e350",
+                      color: "#e3dc50",
                       letterSpacing: "0.12em",
                     }}
                   >

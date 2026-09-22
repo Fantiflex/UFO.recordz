@@ -1,27 +1,19 @@
 node_modules/
 dist/
 
-.env
-.env.local
+
 .env.*.local
 
-.DS_Store
-# Environment variables
+
 .env
 .env.*
 !.env.example
 
-# Supabase local development
 supabase/.temp/
 supabase/.branches/
 supabase/.env
 supabase/.env.*
 
-# Node
-node_modules/
 
-# Vite
-dist/
 
-# macOS
 .DS_Store

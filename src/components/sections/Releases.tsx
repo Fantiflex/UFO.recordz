@@ -13,6 +13,7 @@ type Release = {
   Length: number | null;
   "Link Soundcloud": string | null;
   "Link Bandcamp": string | null;
+  "Artwork URL": string | null;
   Graphist: string | null;
 };
 
@@ -29,6 +30,7 @@ function formatDuration(seconds: number | null) {
   }
 
   const minutes = Math.floor(seconds / 60);
+
   const remainingSeconds = Math.round(seconds % 60)
     .toString()
     .padStart(2, "0");
@@ -48,6 +50,14 @@ function formatDate(date: string | null) {
   });
 }
 
+function getHighResArtwork(url: string | null) {
+  if (!url) {
+    return null;
+  }
+
+  return url.replace("-large.", "-t500x500.");
+}
+
 function Releases() {
   const [releases, setReleases] = useState<Release[]>([]);
   const [loading, setLoading] = useState(true);
@@ -58,9 +68,10 @@ function Releases() {
       const { data, error } = await supabase
         .from("releases")
         .select("*")
+        .order("Release Date", {
+          ascending: false,
+        })
         .limit(6);
-
-      console.log("DATA:", data);
 
       if (error) {
         console.error(
@@ -110,7 +121,9 @@ function Releases() {
 
         <p
           className="font-mono text-xs"
-          style={{ color: "#ff7070" }}
+          style={{
+            color: "#ff7070",
+          }}
         >
           Unable to load releases.
         </p>
@@ -132,11 +145,17 @@ function Releases() {
         }}
       >
         {releases.map((release, index) => {
-          const color = COLORS[index % COLORS.length];
+          const color =
+            COLORS[index % COLORS.length];
 
           const listenUrl =
             release["Link Soundcloud"] ??
             release["Track Link"];
+
+          const artworkUrl =
+            getHighResArtwork(
+              release["Artwork URL"]
+            );
 
           return (
             <a
@@ -162,50 +181,36 @@ function Releases() {
               />
 
               <div className="flex items-start justify-between mb-8">
-                {/* Record visual */}
+                {/* Artwork */}
                 <div
-                  className="relative flex items-center justify-center"
+                  className="relative overflow-hidden"
                   style={{
-                    width: 64,
-                    height: 64,
+                    width: 112,
+                    height: 112,
+                    background: "#080808",
+                    border: `1px solid ${color}22`,
                   }}
                 >
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      background: "#080808",
-                      border: `1px solid ${color}22`,
-                    }}
-                  />
-
-                  {[0.85, 0.65, 0.45].map(
-                    (scale, i) => (
-                      <div
-                        key={i}
-                        className="absolute rounded-full"
-                        style={{
-                          width: `${scale * 64}px`,
-                          height: `${scale * 64}px`,
-                          border: `1px solid ${color}${
-                            i === 0
-                              ? "30"
-                              : i === 1
-                              ? "18"
-                              : "0c"
-                          }`,
-                        }}
-                      />
-                    )
+                  {artworkUrl ? (
+                    <img
+                      src={artworkUrl}
+                      alt={
+                        release["Track Name"] ??
+                        "Release artwork"
+                      }
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center font-mono text-xs"
+                      style={{
+                        color:
+                          "rgba(228,228,226,0.25)",
+                      }}
+                    >
+                      UFO
+                    </div>
                   )}
-
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 8,
-                      height: 8,
-                      background: color + "60",
-                    }}
-                  />
                 </div>
 
                 <span
@@ -229,11 +234,12 @@ function Releases() {
                     letterSpacing: "0.15em",
                   }}
                 >
-                  {release.Artist ?? "UFO.recordz"}
+                  {release.Artist ??
+                    "UFO.recordz"}
                 </p>
 
                 <h3
-                  className="font-condensed text-2xl font-700 mb-4"
+                  className="font-condensed text-2xl mb-4"
                   style={{
                     fontWeight: 700,
                     letterSpacing: "0.04em",
@@ -244,14 +250,16 @@ function Releases() {
                     "UNTITLED"}
                 </h3>
 
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                   <Tag>
                     {formatDuration(
                       release.Length
                     )}
                   </Tag>
 
-                  <Tag>SOUNDCLOUD</Tag>
+                  <Tag>
+                    SOUNDCLOUD
+                  </Tag>
 
                   {release["Link Bandcamp"] && (
                     <span
@@ -259,7 +267,8 @@ function Releases() {
                       style={{
                         color:
                           "rgba(228, 228, 226, 0.25)",
-                        letterSpacing: "0.08em",
+                        letterSpacing:
+                          "0.08em",
                       }}
                     >
                       BANDCAMP
@@ -274,7 +283,8 @@ function Releases() {
                   style={{
                     color:
                       "rgba(228, 228, 226, 0.2)",
-                    letterSpacing: "0.1em",
+                    letterSpacing:
+                      "0.1em",
                   }}
                 >
                   {formatDate(

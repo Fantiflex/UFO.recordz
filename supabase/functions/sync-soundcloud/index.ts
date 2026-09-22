@@ -118,7 +118,7 @@ export default {
         // 4. Fetch ALL tracks
         // =========================
 
-        let tracks: any[] = [];
+        const tracks: any[] = [];
 
         let nextUrl: string | null =
           `https://api.soundcloud.com/users/${encodeURIComponent(
@@ -150,7 +150,7 @@ export default {
           if (Array.isArray(tracksData)) {
             tracks.push(...tracksData);
 
-            // Old/non-paginated response
+            // Non-paginated response
             nextUrl = null;
           } else {
             tracks.push(...(tracksData.collection ?? []));
@@ -159,9 +159,9 @@ export default {
             nextUrl = tracksData.next_href ?? null;
           }
         }
+
         // =========================
         // 5. Transform SoundCloud data
-        //    to match YOUR table columns
         // =========================
 
         const releases = tracks
@@ -197,8 +197,14 @@ export default {
 
               "Link Soundcloud": track.permalink_url ?? null,
 
-              // Not provided reliably by SoundCloud,
-              // so we leave these empty for manual editing.
+              // Artwork from SoundCloud.
+              // Fallback to the profile image if no track artwork exists.
+              "Artwork URL":
+                track.artwork_url ??
+                track.user?.avatar_url ??
+                null,
+
+              // Manual fields
               "Link Bandcamp": null,
 
               "Graphist": null,

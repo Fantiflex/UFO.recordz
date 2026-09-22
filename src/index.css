@@ -141,3 +141,22 @@ body {
 .trusted-ticker:hover {
   animation-play-state: paused;
 }
+
+
+.artist-marquee {
+  animation: artist-marquee-scroll 35s linear infinite;
+}
+
+.artist-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes artist-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-25%);
+  }
+}

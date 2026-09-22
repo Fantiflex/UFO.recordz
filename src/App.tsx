@@ -10,6 +10,7 @@ import Releases from "./components/sections/Releases";
 import Events from "./components/sections/Events";
 import Artists from "./components/sections/Artists";
 import TrustedBy from "./components/sections/TrustedBy";
+import PlayedWithUs from "./components/sections/PlayedWithUs";
 
 import LabelPage from "./pages/LabelPage";
 import ValeursPage from "./pages/ValeursPage";
@@ -23,6 +24,7 @@ function HomePage() {
       <Hero />
       <TrustedBy />
       <WhoWeAre />
+      <PlayedWithUs />
       <Releases />
       <Events />
       <Artists />

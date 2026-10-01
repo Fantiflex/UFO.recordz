@@ -49,7 +49,7 @@ function PlayedWithUs() {
       <div className="px-6 md:px-10 lg:px-15 max-w-6xl mx-auto">
         <SectionHeader
           label=""
-          title="IELLES ONT JOUÉ CHEZ NOUS"
+          title="IELLES VOUS ONT FAIT DANSÉ"
         />
       </div>
 

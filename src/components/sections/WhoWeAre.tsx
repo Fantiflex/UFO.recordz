@@ -22,10 +22,10 @@ function WhoWeAre() {
               color: "#e4e4e2",
             }}
           >
-            PAR NOUS,
+            VOUS FAIRE
             <br />
             <span style={{ color: "#f4f445" }}>
-              POUR VOUS.
+              DANSER.
             </span>
           </p>
 

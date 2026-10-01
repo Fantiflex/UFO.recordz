@@ -2,12 +2,15 @@ const partners = [
   { name: "La Scène de Recherche", image: "/SDR.png" },
   { name: "La Cité Fertile", image: "/CF.jpeg" },
   { name: "Panic Room", image: "/PanicRoom.webp" },
-  { name: "Versailles", image: "/Versailles.jpeg" },
-  { name: "Gif-sur-Yvette", image: "/GifSurYvette.png" },
   { name: "Pride Radicale", image: "/PrideRadicale.png" },
-  { name: "Manifestive", image: "/Manifestive.jpg" },
   { name: "Interfilieres", image: "/Interfilieres.png" },
+
+
+  { name: "Gif-sur-Yvette", image: "/GifSurYvette.png" },
+
+  { name: "Manifestive", image: "/Manifestive.jpg" },
   { name: "LeChinois", image: "/LeChinois.jpg" },
+  { name: "Versailles", image: "/Versailles.jpeg" },
 ];
 
 export default function TrustedBy() {
@@ -22,7 +25,7 @@ export default function TrustedBy() {
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="trusted-ticker flex w-max items-center gap-12">
+        <div className="trusted-ticker flex w-max items-center gap-2">
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}

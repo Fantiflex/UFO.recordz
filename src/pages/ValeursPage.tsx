@@ -1,4 +1,3 @@
-import SectionHeader from "../components/ui/SectionHeader";
 import ConductCharter from "../components/sections/ConductCharter";
 
 

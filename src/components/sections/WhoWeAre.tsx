@@ -1,6 +1,4 @@
-import { RELEASES } from "../../data/releases";
 import SectionHeader from "../ui/SectionHeader";
-import Tag from "../ui/Tag";
 
 
 function WhoWeAre() {

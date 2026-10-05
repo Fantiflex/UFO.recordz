@@ -5,7 +5,6 @@ import Footer from "./components/layout/Footer";
 
 import Hero from "./components/sections/Hero";
 import WhoWeAre from "./components/sections/WhoWeAre";
-import ConductCharter from "./components/sections/ConductCharter";
 import Releases from "./components/sections/Releases";
 import Events from "./components/sections/Events";
 import TrustedBy from "./components/sections/TrustedBy";

@@ -1,41 +1,40 @@
 # UFO.recordz
 
-Site du collectif et label indépendant UFO.recordz, basé à Paris.
+Website for UFO.recordz, an independent collective and record label based in Paris.
 
-Le site présente le collectif, ses sorties musicales, ses événements,
-sa charte et ses informations de contact.
+The site presents the collective, music releases, events, values, and contact information.
 
-**Site :** [www.uforecordz.fr](https://www.uforecordz.fr)
+**Website:** [www.uforecordz.fr](https://www.uforecordz.fr)
 
-## Technologies
+## Tech Stack
 
-- React 19 et TypeScript
+- React 19 and TypeScript
 - Vite 8
 - Tailwind CSS 4
 - React Router
-- Supabase : PostgreSQL et Edge Functions
-- API SoundCloud
-- Vercel pour l’hébergement
+- Supabase: PostgreSQL and Edge Functions
+- SoundCloud API
+- Vercel
 
-## Fonctionnalités
+## Features
 
-- Présentation du collectif et du label
-- Dernières sorties musicales chargées depuis Supabase
-- Événements à venir et passés avec programmation et liens externes
-- Bandeau des artistes ayant participé aux événements
-- Charte de bonne conduite consultable et téléchargeable
-- Pages de contact et navigation responsive
+- Collective and label presentation
+- Latest music releases loaded from Supabase
+- Upcoming and past events with lineups and external links
+- Scrolling banner of artists who have performed at events
+- Code of conduct with a downloadable PDF
+- Responsive navigation and contact pages
 
-## Installation locale
+## Local Development
 
-### Prérequis
+### Requirements
 
-Les versions déclarées dans `package.json` sont :
+Versions declared in `package.json`:
 
 - Node.js 24.x
 - pnpm 12.4.1
 
-### Installer le projet
+### Installation
 
 ```bash
 git clone https://github.com/Fantiflex/UFO.recordz.git
@@ -43,133 +42,139 @@ cd UFO.recordz
 pnpm install
 ```
 
-### Configurer Supabase
+### Environment Variables
 
-Créer un fichier `.env.local` à la racine du projet :
+Create a `.env.local` file in the project root:
 
 ```dotenv
-VITE_SUPABASE_URL=https://votre-projet.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=votre-cle-publique
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 ```
 
-Utiliser la clé publique du projet Supabase.
-Les clés secrètes et la clé `service_role` ne doivent pas être placées
-dans les variables `VITE_*`, qui sont accessibles dans le navigateur.
+Use the project's public Supabase key. Never place secret keys or a
+`service_role` key in `VITE_*` variables: these are exposed to the browser.
 
-Le fichier `.env.local` est ignoré par Git.
+Local environment files are ignored by Git.
 
-### Démarrer le site
+### Start the Development Server
 
 ```bash
 pnpm run dev
 ```
 
-Ouvrir l’adresse indiquée par Vite dans le terminal.
+Open the URL printed in the terminal.
 
-## Commandes
+## Commands
 
-| Commande | Utilité |
+| Command | Purpose |
 |---|---|
-| `pnpm run dev` | Démarrer le serveur de développement |
-| `pnpm run build` | Générer le site dans `dist/` |
-| `pnpm run preview` | Prévisualiser le dernier build |
-| `pnpm exec tsc --noEmit` | Vérifier les types TypeScript |
-| `pnpm run format` | Exécuter le formateur du projet |
+| `pnpm run dev` | Start the development server |
+| `pnpm run build` | Build the website into `dist/` |
+| `pnpm run preview` | Preview the production build locally |
+| `pnpm exec tsc --noEmit` | Check TypeScript types |
+| `pnpm run format` | Run the project formatter |
 
-Le build Vite et la vérification TypeScript sont deux commandes distinctes.
+The Vite build and TypeScript checks are separate commands.
 
-## Organisation du projet
+## Project Structure
 
-| Emplacement | Contenu |
+| Path | Purpose |
 |---|---|
-| `src/pages/` | Pages du site |
-| `src/components/layout/` | Navigation et pied de page |
-| `src/components/sections/` | Sections et cartes du site |
-| `src/components/ui/` | Éléments d’interface réutilisables |
-| `src/data/navigation.ts` | Configuration de navigation |
-| `src/data/supabaseEvents.ts` | Requête et transformation des événements |
-| `src/hooks/useEvents.ts` | Chargement des événements et états associés |
-| `src/lib/supabase.ts` | Client Supabase du navigateur |
-| `src/imports/` | Logos et pochettes importés par le code |
-| `src/data/images/` | Photographies du collectif |
-| `public/` | Fichiers accessibles directement par URL |
-| `supabase/functions/sync-soundcloud/` | Fonction de synchronisation SoundCloud |
-| `vercel.json` | Configuration du routage sur Vercel |
+| `src/pages/` | Website pages |
+| `src/components/layout/` | Navigation and footer |
+| `src/components/sections/` | Page sections and cards |
+| `src/components/ui/` | Reusable interface components |
+| `src/data/navigation.ts` | Navigation configuration |
+| `src/data/supabaseEvents.ts` | Event queries and data transformation |
+| `src/hooks/useEvents.ts` | Event loading, error, and data states |
+| `src/lib/supabase.ts` | Browser Supabase client |
+| `src/imports/` | Logos and release artwork imported by components |
+| `src/data/images/` | Collective photographs |
+| `public/` | Files served directly, including the code of conduct PDF |
+| `supabase/functions/sync-soundcloud/` | SoundCloud synchronization function |
+| `vercel.json` | Vercel routing configuration |
 
 ## Pages
 
-| URL | Page |
+| Route | Page |
 |---|---|
-| `/` | Accueil |
-| `/ufo-recordz` | Le collectif |
-| `/events` | Événements |
-| `/label` | Le label |
-| `/valeurs` | Valeurs et charte |
+| `/` | Home |
+| `/ufo-recordz` | Collective |
+| `/events` | Events |
+| `/label` | Record label |
+| `/valeurs` | Values and code of conduct |
 | `/contact` | Contact |
 
-## Données Supabase
+## Supabase Data
 
-Le site utilise les tables suivantes :
+The website reads from the following tables:
 
-| Table | Rôle |
+| Table | Purpose |
 |---|---|
-| `events` | Informations des événements |
-| `events_artists` | Programmation associée à chaque événement |
-| `artists_events` | Artistes affichés dans le bandeau |
-| `releases` | Métadonnées des sorties musicales |
+| `events` | Event details |
+| `events_artists` | Lineups associated with events |
+| `artists_events` | Artists displayed in the scrolling banner |
+| `releases` | Music release metadata |
 
-`events_artists.event_id` référence `events.id`.
+`events_artists.event_id` references `events.id`.
 
-Les événements utilisent notamment les colonnes `Name`, `Date`, `Venue`,
-`Horaires`, `link_shotgun` et `link_instagram`.
-La programmation utilise les colonnes `"artist 1"` à `"artist 8"`.
+Event fields include `Name`, `Date`, `Venue`, `Horaires`,
+`link_shotgun`, and `link_instagram`. Lineups use the columns
+`"artist 1"` through `"artist 8"`.
 
-Les événements datés sont répartis entre événements à venir et passés
-selon la date du jour à Paris. Les événements sans date ne sont pas
-affichés dans ces deux listes.
+Dated events are classified as upcoming or past using the current date
+in Paris. Events without a date are excluded from these lists.
 
-Le schéma des tables et les règles d’accès doivent être configurés
-dans Supabase. Ce dépôt ne contient pas actuellement les migrations
-SQL permettant de recréer ces tables.
+The database schema and access policies must be configured in Supabase.
+This repository does not currently include SQL migrations to recreate
+the tables.
 
-Les règles RLS doivent autoriser la lecture publique des données
-nécessaires au site.
+Row Level Security policies must allow public read access to the data
+displayed on the website.
 
-Les modifications de données sont récupérées lors d’un nouveau
-chargement de la page, sans nécessiter un nouveau déploiement du site.
+Database updates are retrieved when the page loads again and do not
+require a new website deployment.
 
-## Synchronisation SoundCloud
+## SoundCloud Synchronization
 
-La fonction `sync-soundcloud` récupère les métadonnées des morceaux
-depuis l’API SoundCloud et les enregistre dans la table `releases`.
+The `sync-soundcloud` Edge Function fetches track metadata from the
+SoundCloud API and saves it to the `releases` table.
 
-Elle utilise les secrets serveur suivants :
+It requires the following server-side secrets:
 
 - `SOUNDCLOUD_CLIENT_ID`
 - `SOUNDCLOUD_CLIENT_SECRET`
 
-Ces secrets se configurent dans Supabase et ne doivent pas être
-ajoutés au dépôt ou au frontend.
+Configure these secrets in Supabase. Do not add them to the repository
+or frontend environment variables.
 
-La fonction se déploie séparément du site Vercel.
-Son éventuelle planification est à configurer dans Supabase.
+The function is deployed separately from the Vercel website.
+Any scheduled execution must also be configured in Supabase.
 
-## Déploiement Vercel
+## Deployment
 
-Configuration attendue :
+Vercel configuration:
 
-- Framework : Vite
-- Commande de build : `pnpm run build`
-- Dossier de sortie : `dist`
-- Variables : `VITE_SUPABASE_URL` et `VITE_SUPABASE_PUBLISHABLE_KEY`
+| Setting | Value |
+|---|---|
+| Framework | Vite |
+| Build command | `pnpm run build` |
+| Output directory | `dist` |
 
-Les variables Vite sont intégrées au moment du build.
-Après leur modification dans Vercel, lancer un nouveau déploiement.
+Set the following environment variables in Vercel:
 
-`vercel.json` redirige les routes vers `index.html` pour permettre
-l’ouverture directe des pages gérées par React Router.
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
 
-## Vérification avant intégration
+Vite embeds these values during the build. Redeploy the website after
+changing them.
+
+`vercel.json` rewrites routes to `index.html`, allowing React Router
+pages to be opened directly.
+
+## Validation
+
+Before merging changes:
 
 ```bash
 pnpm exec tsc --noEmit
@@ -177,7 +182,7 @@ pnpm run build
 pnpm run preview
 ```
 
-Vérifier la navigation, le chargement des données et les liens externes.
+Check navigation, data loading, and external links.
 
-Les dossiers `node_modules/` et `dist/`, les fichiers `.env` et les
-métadonnées `.DS_Store` ne doivent pas être versionnés.
+Do not commit `node_modules/`, `dist/`, environment files, or
+`.DS_Store` files.

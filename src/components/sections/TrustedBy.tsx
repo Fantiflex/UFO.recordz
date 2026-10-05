@@ -29,7 +29,7 @@ export default function TrustedBy() {
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex h-32 w-52 shrink-0 items-center justify-center"
+              className="flex h-32 w-45 shrink-0 items-center justify-center"
             >
               <img
                 src={partner.image}

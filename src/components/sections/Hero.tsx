@@ -1,6 +1,8 @@
 import UFOOrb from "../ufo/UFOOrb";
+import { Link } from "react-router-dom";
 
-function Hero({ setActive }: { setActive: (s: string) => void }) {
+
+function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
       {/* Background grid */}
@@ -48,20 +50,31 @@ function Hero({ setActive }: { setActive: (s: string) => void }) {
         </p>
 
         <div className="animate-fade-in-up delay-700 flex flex-col sm:flex-row gap-4 items-center">
-          <button
-            onClick={() => setActive("releases")}
+          <Link
+            to="/label"
             className="font-condensed text-xs tracking-widest px-8 py-3.5 transition-all duration-300 hover:brightness-90"
-            style={{ background: "#d4e350", color: "#030302", letterSpacing: "0.2em", fontWeight: 600 }}
+            style={{
+              background: "#d4e350",
+              color: "#030302",
+              letterSpacing: "0.2em",
+              fontWeight: 600,
+            }}
           >
             NEW RELEASES
-          </button>
-          <button
-            onClick={() => setActive("events")}
+          </Link>
+
+          <Link
+            to="/events"
             className="font-condensed text-xs tracking-widest px-8 py-3.5 border transition-all duration-300 hover:border-[#50e3c2] hover:text-[#50e3c2]"
-            style={{ borderColor: "rgba(228, 228, 226, 0.15)", color: "rgba(228, 228, 226, 0.5)", letterSpacing: "0.2em" }}
+            style={{
+              background: "#d4e350",
+              color: "#030302",
+              letterSpacing: "0.2em",
+              fontWeight: 600,
+            }}
           >
             UPCOMING EVENTS
-          </button>
+          </Link>
         </div>
       </div>
 

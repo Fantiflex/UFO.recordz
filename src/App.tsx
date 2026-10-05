@@ -8,7 +8,6 @@ import WhoWeAre from "./components/sections/WhoWeAre";
 import ConductCharter from "./components/sections/ConductCharter";
 import Releases from "./components/sections/Releases";
 import Events from "./components/sections/Events";
-import Artists from "./components/sections/Artists";
 import TrustedBy from "./components/sections/TrustedBy";
 import PlayedWithUs from "./components/sections/PlayedWithUs";
 
@@ -26,9 +25,7 @@ function HomePage() {
       <WhoWeAre />
       <PlayedWithUs />
       <Releases />
-      <Events />
-      <Artists />
-      
+      <Events />      
     </>
   );
 }

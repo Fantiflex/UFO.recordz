@@ -4,7 +4,7 @@ import SectionHeader from "../ui/SectionHeader";
 function WhoWeAre() {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
-      <SectionHeader label="À PROPOS" title="QUI SOMMES-NOUS ?" />
+      <SectionHeader label="À PROPOS" title="NOTRE OBJECTIF?" />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-start">
         

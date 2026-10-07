@@ -92,7 +92,7 @@ function PlayedWithUs() {
                     href={artist.SoundCloud}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-[10px]"
+                    className="font-mono text-xs md:text-[10px] inline-flex items-center min-h-11"
                     style={{
                       color: "#e3dc50",
                       letterSpacing: "0.12em",

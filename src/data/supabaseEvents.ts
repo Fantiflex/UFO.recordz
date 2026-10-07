@@ -11,15 +11,8 @@ export type SupabaseEvent = {
   linkInstagram: string | null;
 };
 
-type LineupRow = {
-  "artist 1": string;
-  "artist 2": string | null;
-  "artist 3": string | null;
-  "artist 4": string | null;
-  "artist 5": string | null;
-  "artist 6": string | null;
-  "artist 7": string | null;
-  "artist 8": string | null;
+type EventArtistRow = {
+  artist_name: string;
 };
 
 type EventRow = {
@@ -30,7 +23,7 @@ type EventRow = {
   Horaires: string | null;
   link_shotgun: string | null;
   link_instagram: string | null;
-  events_artists: LineupRow | null;
+  event_artists: EventArtistRow[];
 };
 
 export async function fetchEvents(): Promise<SupabaseEvent[]> {
@@ -44,15 +37,8 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
       Horaires,
       link_shotgun,
       link_instagram,
-      events_artists (
-        "artist 1",
-        "artist 2",
-        "artist 3",
-        "artist 4",
-        "artist 5",
-        "artist 6",
-        "artist 7",
-        "artist 8"
+      event_artists (
+        artist_name
       )
     `)
     .order("Date", { ascending: false, nullsFirst: false })
@@ -63,23 +49,11 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
   }
 
   return (data ?? []).map((row) => {
-    const artists = row.events_artists;
+    
 
-    const lineup = artists
-      ? [
-          artists["artist 1"],
-          artists["artist 2"],
-          artists["artist 3"],
-          artists["artist 4"],
-          artists["artist 5"],
-          artists["artist 6"],
-          artists["artist 7"],
-          artists["artist 8"],
-        ]
-          .filter((name): name is string => typeof name === "string")
-          .map((name) => name.trim())
-          .filter((name) => name.length > 0)
-      : [];
+    const lineup = (row.event_artists ?? [])
+      .map((entry) => entry.artist_name.trim())
+      .filter((name) => name.length > 0);
 
     return {
       id: row.id,

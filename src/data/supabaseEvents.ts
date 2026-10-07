@@ -6,13 +6,19 @@ export type SupabaseEvent = {
   date: string | null;
   venue: string | null;
   time: string | null;
-  lineup: string[];
+  lineup: {
+    name: string;
+    slug: string;
+  }[];
   linkShotgun: string | null;
   linkInstagram: string | null;
 };
 
 type EventArtistRow = {
   artist_name: string;
+  artists_events: {
+    slug: string;
+  } | null;
 };
 
 type EventRow = {
@@ -38,7 +44,10 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
       link_shotgun,
       link_instagram,
       event_artists (
-        artist_name
+        artist_name,
+        artists_events (
+          slug
+        )
       )
     `)
     .order("Date", { ascending: false, nullsFirst: false })
@@ -52,8 +61,11 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
     
 
     const lineup = (row.event_artists ?? [])
-      .map((entry) => entry.artist_name.trim())
-      .filter((name) => name.length > 0);
+      .map((entry) => ({
+        name: entry.artist_name.trim(),
+        slug: entry.artists_events?.slug ?? "",
+      }))
+      .filter((artist) => artist.name.length > 0 && artist.slug.length > 0);
 
     return {
       id: row.id,

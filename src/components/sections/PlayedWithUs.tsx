@@ -87,8 +87,7 @@ function PlayedWithUs() {
                 ✦
               </span>
 
-              <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {artist.SoundCloud && (
+                <div className="flex items-center gap-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">                {artist.SoundCloud && (
                   <a
                     href={artist.SoundCloud}
                     target="_blank"
@@ -108,7 +107,7 @@ function PlayedWithUs() {
                     href={artist.Instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-[10px]"
+                    className="font-mono text-xs md:text-[10px] inline-flex items-center min-h-11"
                     style={{
                       color: "#c8e350",
                       letterSpacing: "0.12em",

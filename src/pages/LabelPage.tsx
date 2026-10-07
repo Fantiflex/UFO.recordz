@@ -16,12 +16,36 @@ import SectionHeader from "../components/ui/SectionHeader";
 
 function LabelPage() {
   const labelVisuals = [
-    [va006Recto, va006Verso],
-    [va005Recto, va005Verso],
-    [va004Verso, va004Recto],
-    [va003Recto, va003Verso],
-    [va002Verso, va002Recto],
-    [va001Recto, va001Verso],
+    {
+      recto: va006Recto,
+      verso: va006Verso,
+      link: "https://soundcloud.com/uforecordz/sets/acid-session-vol4-ufova006",
+    },
+    {
+      recto: va005Recto,
+      verso: va005Verso,
+      link: "https://soundcloud.com/uforecordz/sets/darktone-session-ufova005",
+    },
+    {
+      recto: va004Verso,
+      verso: va004Recto,
+      link: "https://soundcloud.com/uforecordz/sets/acid-session-vol3-ufova004",
+    },
+    {
+      recto: va003Recto,
+      verso: va003Verso,
+      link: "https://soundcloud.com/uforecordz/sets/acid-session-vol2-ufova003",
+    },
+    {
+      recto: va002Verso,
+      verso: va002Recto,
+      link: "https://soundcloud.com/uforecordz/sets/tribe-session-vol1-ufo-va002",
+    },
+    {
+      recto: va001Recto,
+      verso: va001Verso,
+      link: "https://soundcloud.com/uforecordz/sets/acid-session-vol1-ufo-va001",
+    },
   ];
 
   return (
@@ -171,13 +195,17 @@ function LabelPage() {
         </div>
 
         <div className="flex flex-col gap-10">
-          {labelVisuals.map(([recto, verso], index) => (
+          {labelVisuals.map(({ recto, verso, link }, index) => (
             <div
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
-              <div
-                className="overflow-hidden group"
+            
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="overflow-hidden group block"
                 style={{
                   aspectRatio: "1 / 1",
                   background: "#080808",
@@ -186,13 +214,16 @@ function LabelPage() {
               >
                 <img
                   src={recto}
-                  alt={`UFO release ${index + 1} recto`}
+                  alt={`UFO VA ${index + 1} recto`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
+              </a>
 
-              <div
-                className="overflow-hidden group"
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="overflow-hidden group block"
                 style={{
                   aspectRatio: "1 / 1",
                   background: "#080808",
@@ -201,10 +232,10 @@ function LabelPage() {
               >
                 <img
                   src={verso}
-                  alt={`UFO release ${index + 1} verso`}
+                  alt={`UFO VA ${index + 1} verso`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
+              </a>
             </div>
           ))}
         </div>

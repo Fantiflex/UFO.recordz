@@ -51,13 +51,12 @@ export async function fetchArtistBySlug(
     soundcloud: data["SoundCloud"],
     instagram: data["Instagram"],
     events: (data.event_artists ?? [])
-        .map((entry) => entry.events)
-        .filter((event): event is NonNullable<typeof event> => event !== null)
+        .flatMap((entry) => entry.events ?? [])
         .map((event) => ({
-        id: event.id,
-        name: event.Name,
-        date: event.Date,
-        venue: event.Venue,
+            id: event.id,
+            name: event.Name,
+            date: event.Date,
+            venue: event.Venue,
         })),
     };
 }

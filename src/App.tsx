@@ -15,6 +15,7 @@ import ValeursPage from "./pages/ValeursPage";
 import UFORecordzPage from "./pages/UFORecordzPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
+import ArtistPage from "./pages/ArtistPage";
 
 function HomePage() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/valeurs" element={<ValeursPage />} />
 
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/artists/:slug" element={<ArtistPage />} />
         </Routes>
 
         <Footer />

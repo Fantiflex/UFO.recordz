@@ -1,4 +1,5 @@
 import type { SupabaseEvent } from "../../data/supabaseEvents";
+import { Link } from "react-router-dom";
 
 type EventCardProps = {
   event: SupabaseEvent;
@@ -90,17 +91,18 @@ export default function EventCard({ event }: EventCardProps) {
         <div className="max-w-md">
           <div className="flex flex-wrap gap-2">
             {event.lineup.map((artist, index) => (
-              <span
-                key={`${artist}-${index}`}
-                className="px-2 py-0.5 font-mono text-xs"
+              <Link
+                key={`${artist.slug}-${index}`}
+                to={`/artists/${artist.slug}`}
+                className="px-2 py-0.5 font-mono text-xs hover:underline"
                 style={{
                   color: "rgba(227,228,226,0.35)",
                   border: "1px solid rgba(255,255,255,0.06)",
                   letterSpacing: "0.08em",
                 }}
               >
-                {artist}
-              </span>
+                {artist.name}
+              </Link>
             ))}
           </div>
         </div>

@@ -21,10 +21,18 @@ export async function fetchArtistBySlug(
   const { data, error } = await supabase
     .from("artists_events")
     .select(`
-      "Artist Name",
-      slug,
-      "SoundCloud",
-      "Instagram"
+        "Artist Name",
+        slug,
+        "SoundCloud",
+        "Instagram",
+        event_artists (
+            events (
+            id,
+            "Name",
+            "Date",
+            "Venue"
+            )
+        )
     `)
     .eq("slug", slug)
     .maybeSingle();
@@ -42,5 +50,14 @@ export async function fetchArtistBySlug(
     slug: data.slug,
     soundcloud: data["SoundCloud"],
     instagram: data["Instagram"],
-  };
+    events: (data.event_artists ?? [])
+        .map((entry) => entry.events)
+        .filter((event): event is NonNullable<typeof event> => event !== null)
+        .map((event) => ({
+        id: event.id,
+        name: event.Name,
+        date: event.Date,
+        venue: event.Venue,
+        })),
+    };
 }

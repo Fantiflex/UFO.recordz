@@ -80,6 +80,29 @@ export default function ArtistPage() {
               Instagram
             </a>
           )}
+            {artist.events.length > 0 && (
+                <div className="mt-16">
+                    <h2 className="text-2xl font-bold uppercase">
+                    Played at UFO
+                    </h2>
+
+                    <div className="mt-6 space-y-4">
+                    {artist.events.map((event) => (
+                        <div key={event.id}>
+                        <p className="font-condensed text-xl">
+                            {event.name}
+                        </p>
+
+                        <p className="font-mono text-xs opacity-50">
+                            {event.date ?? "Date à confirmer"}
+                            {event.venue ? ` · ${event.venue}` : ""}
+                        </p>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+                )}
+
         </div>
       </section>
     </main>

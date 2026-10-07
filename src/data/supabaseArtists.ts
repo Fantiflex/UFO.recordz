@@ -1,12 +1,19 @@
 import { supabase } from "../lib/supabase";
 
+export type SupabaseArtistEvent = {
+  id: number;
+  name: string;
+  date: string | null;
+  venue: string | null;
+};
+
 export type SupabaseArtist = {
   name: string;
   slug: string;
   soundcloud: string | null;
   instagram: string | null;
+  events: SupabaseArtistEvent[];
 };
-
 
 export async function fetchArtistBySlug(
   slug: string

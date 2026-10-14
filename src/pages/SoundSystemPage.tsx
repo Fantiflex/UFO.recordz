@@ -1,4 +1,7 @@
 import SoundSystemModel from "../components/ufo/SoundSystemModel";
+import SoundSystemQuoteForm from "../components/ufo/SoundSystemQuoteForm";
+
+
 const configurations = [
   {
     range: "50 à 150",
@@ -52,7 +55,7 @@ export default function SoundSystemPage() {
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
 
-            <span className="font-mono text-xs uppercase tracking-widest text-[#c8e350]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#f8ff33]">
               Drag to rotate / Scroll to zoom
             </span>
           </div>
@@ -74,14 +77,14 @@ export default function SoundSystemPage() {
             {configurations.map((config) => (
             <div
                 key={config.range}
-                className="border border-white/10 bg-[#111111] p-8 transition-colors duration-300 hover:border-[#c8e350]/60"
+                className="border border-white/10 bg-[#111111] p-8 transition-colors duration-300 hover:border-[#f8ff33]/60"
             >
                 <div className="mb-8">
                 <span className="font-mono text-xs uppercase tracking-widest text-white/40">
                     CAPACITÉ
                 </span>
 
-                <h3 className="mt-3 text-3xl font-bold text-[#c8e350]">
+                <h3 className="mt-3 text-3xl font-bold text-[#f8ff33]">
                     {config.range}
                 </h3>
 
@@ -101,7 +104,7 @@ export default function SoundSystemPage() {
                         key={item}
                         className="flex items-center gap-3 text-lg font-medium"
                     >
-                        <span className="h-1.5 w-1.5 bg-[#c8e350]" />
+                        <span className="h-1.5 w-1.5 bg-[#f8ff33]" />
                         {item}
                     </li>
                     ))}
@@ -111,6 +114,10 @@ export default function SoundSystemPage() {
             ))}
         </div>
         </section>
+
+
+        {/* QUOTE REQUEST FORM */}
+        <SoundSystemQuoteForm />
         {/* DESCRIPTION */}
         <div className="mt-24 grid grid-cols-1 gap-12 ">
 

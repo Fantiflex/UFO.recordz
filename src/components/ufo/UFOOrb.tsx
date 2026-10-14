@@ -63,7 +63,12 @@ function UFOOrb() {
   });
 
   return (
-    <svg viewBox="0 0 560 370" width={540} height={356} style={{ overflow: "visible" }}>
+    <svg
+      viewBox="0 0 560 520"
+      width={540}
+      height={502}
+      style={{ overflow: "visible" }}
+    >
       <defs>
         <radialGradient id="g-dome" cx="40%" cy="28%" r="65%">
           <stop offset="0%" stopColor="#3e3d2e" />
@@ -109,13 +114,37 @@ function UFOOrb() {
         <filter id="f-rim-tip" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="3" />
         </filter>
+        <linearGradient
+          id="g-tractor-beam"
+          x1="0"
+          y1="0"
+          x2="0"
+          y2="1"
+        >
+          <stop offset="0%" stopColor="#e3ff80" stopOpacity={0.48} />
+          <stop offset="45%" stopColor="#c8e350" stopOpacity={0.22} />
+          <stop offset="100%" stopColor="#c8e350" stopOpacity={0} />
+        </linearGradient>
+
+        <filter id="f-tractor-beam" x="-50%" y="-20%" width="200%" height="150%">
+          <feGaussianBlur stdDeviation={7} />
+        </filter>
       </defs>
 
-      {/* AMBIENT UNDERBELLY GLOW */}
-      <ellipse cx={cx} cy={272} rx={118} ry={26}
-        fill="rgba(207, 227, 80, 0.25)" filter="url(#f-ambient)"
-        className="animate-pulse-glow" />
-
+      {/* DIRECTIONAL TRACTOR BEAM */}
+      <g className="animate-pulse-glow" pointerEvents="none">
+        <path
+          d={`
+            M ${cx - 19} ${pCy + 5}
+            L ${cx - 85} 600
+            L ${cx + 85} 600
+            L ${cx + 19} ${pCy + 5}
+            Z
+          `}
+          fill="url(#g-tractor-beam)"
+          filter="url(#f-tractor-beam)"
+        />
+      </g>
       {/* DISC UNDERSIDE RING — outer rim front arc to inner hull */}
       <path d={`
         M ${rL} ${cy}

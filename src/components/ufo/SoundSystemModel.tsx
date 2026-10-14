@@ -20,9 +20,9 @@ export default function SoundSystemModel() {
         <directionalLight position={[5, 8, 5]} intensity={2} />
 
         <Suspense fallback={null}>
-          <Bounds fit clip observe margin={1.2}>
-            <Model />
-          </Bounds>
+            <Bounds fit clip observe margin={0.8}>
+                <Model />
+            </Bounds>
         </Suspense>
 
         <OrbitControls
@@ -33,8 +33,8 @@ export default function SoundSystemModel() {
             enablePan={false}
             autoRotate
             autoRotateSpeed={0.9}
-            minDistance={1}
-            maxDistance={50}
+            minDistance={0.01}
+            maxDistance={2}
             />
       </Canvas>
     </div>

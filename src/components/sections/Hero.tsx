@@ -29,29 +29,33 @@ function Hero() {
         </div>
 
 
-       {/* Main heading */}
-        <h1
-          className="animate-fade-in-up delay-300"
-          style={{
-            fontSize: "clamp(3.5rem, 12vw, 9rem)",
-            lineHeight: 0.88,
-            letterSpacing: "-0.02em",
-            fontWeight: 800,
-            color: "#e4e4e2",
-            fontFamily: "'Barlow Condensed', sans-serif",
-          }}
-        >
-          UFO
-          <br />
-          <span
+       {/* Main heading — illuminated by UFO beam */}
+        <div className="relative z-10 -mt-40">
+          <h1
+            className="animate-fade-in-up delay-300"
             style={{
-              color: "rgba(228, 228, 226, 0.18)",
-              WebkitTextStroke: "1px rgba(228, 228, 226, 0.28)",
+              fontSize: "clamp(3.5rem, 12vw, 9rem)",
+              lineHeight: 0.88,
+              letterSpacing: "-0.02em",
+              fontWeight: 800,
+              color: "#e4e4e2",
+              fontFamily: "'Barlow Condensed', sans-serif",
+              textShadow: "0 0 35px rgba(248, 255, 51, 0.12)",
             }}
           >
-            .recordz
-          </span>
-        </h1>
+            UFO
+            <br />
+            <span
+              style={{
+                color: "rgba(228, 228, 226, 0.18)",
+                WebkitTextStroke: "1px rgba(228, 228, 226, 0.28)",
+                textShadow: "0 0 25px rgba(248, 255, 51, 0.08)",
+              }}
+            >
+              .recordz
+            </span>
+          </h1>
+        </div>
 
         <p className="animate-fade-in-up delay-500 text-sm font-light" style={{ color: "rgba(228, 228, 226, 0.38)", letterSpacing: "0.14em" }}>
           TEKNO LABEL & EVENTS 

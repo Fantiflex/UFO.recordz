@@ -25,7 +25,7 @@ export default function SoundSystemQuoteForm() {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/ufo6tem.rec@gmail.com",
+        "https://formsubmit.co/ajax/ef4fdd6c59dce9f445eac0cd933369c6",
         {
           method: "POST",
           headers: {

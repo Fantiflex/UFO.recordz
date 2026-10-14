@@ -28,12 +28,6 @@ function Hero() {
           <UFOOrb />
         </div>
 
-        {/* Label identifier */}
-        <div className="animate-fade-in-up delay-200 flex items-center gap-3">
-          <div style={{ width: 28, height: 1, background: "rgba(222, 227, 80, 0.5)" }} />
-          <span className="font-mono text-xs" style={{ color: "#f8ff33", letterSpacing: "0.3em" }}>On va vous faire danser </span>
-          <div style={{ width: 28, height: 1, background: "rgba(202, 227, 80, 0.5)" }} />
-        </div>
 
        {/* Main heading */}
         <h1

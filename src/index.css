@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
@@ -26,16 +26,16 @@
   --foreground: #e2e2e4;
   --card: #0a0a0d;
   --card-foreground: #e2e2e4;
-  --primary: #50e3c2;
+  --primary: #f8ff33;
   --primary-foreground: #020203;
   --secondary: #111118;
   --secondary-foreground: #a0a0b0;
   --muted: #0d0d14;
   --muted-foreground: #5a5a6e;
-  --accent: #50e3c2;
+  --accent: #dbff0f;
   --accent-foreground: #020203;
   --border: rgba(255,255,255,0.06);
-  --ring: #50e3c2;
+  --ring: #ffea49;
   --radius: 2px;
 }
 
@@ -68,7 +68,7 @@ body {
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(80, 227, 194, 0.4);
+  background: rgba(227, 227, 80, 0.4);
 }
 
 .font-condensed {

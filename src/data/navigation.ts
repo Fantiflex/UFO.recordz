@@ -5,6 +5,11 @@ export const NAV_LINKS = [
     path: "/ufo-recordz",
   },
   {
+    label: "SoundSystem",
+    value: "soundsystem",
+    path: "/soundsystem",
+  },
+  {
     label: "Events",
     value: "events",
     path: "/events",
@@ -24,9 +29,5 @@ export const NAV_LINKS = [
     value: "contact",
     path: "/contact",
   },
-  {
-    label: "SoundSystem",
-    value: "soundsystem",
-    path: "/soundsystem",
-  }
+  
 ];

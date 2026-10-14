@@ -30,7 +30,7 @@ function Hero() {
 
 
        {/* Main heading — illuminated by UFO beam */}
-        <div className="relative z-10 -mt-40">
+        <div className="relative z-10 -mt-30">
           <h1
             className="animate-fade-in-up delay-300"
             style={{

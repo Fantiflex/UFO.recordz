@@ -26,13 +26,16 @@ export default function SoundSystemModel() {
         </Suspense>
 
         <OrbitControls
-          makeDefault
-          enableDamping
-          enableZoom
-          enablePan={false}
-          minDistance={1}
-          maxDistance={50}
-        />
+            makeDefault
+            enableDamping
+            dampingFactor={0.05}
+            enableZoom
+            enablePan={false}
+            autoRotate
+            autoRotateSpeed={0.9}
+            minDistance={1}
+            maxDistance={50}
+            />
       </Canvas>
     </div>
   );

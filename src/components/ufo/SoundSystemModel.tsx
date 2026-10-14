@@ -14,7 +14,7 @@ function Model() {
 
 export default function SoundSystemModel() {
   return (
-    <div className="h-[500px] w-full overflow-hidden rounded-xl bg-[#101010]">
+    <div className="h-[500px] w-full overflow-hidden rounded-xl bg-[#808080]">
       <Canvas camera={{ position: [4, 3, 6], fov: 45 }}>
         <ambientLight intensity={1.8} />
         <directionalLight position={[5, 8, 5]} intensity={2} />

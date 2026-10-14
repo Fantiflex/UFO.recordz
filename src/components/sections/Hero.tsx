@@ -31,51 +31,69 @@ function Hero() {
         {/* Label identifier */}
         <div className="animate-fade-in-up delay-200 flex items-center gap-3">
           <div style={{ width: 28, height: 1, background: "rgba(222, 227, 80, 0.5)" }} />
-          <span className="font-mono text-xs" style={{ color: "#d9e350", letterSpacing: "0.3em" }}>On va vous faire danser </span>
+          <span className="font-mono text-xs" style={{ color: "#f8ff33", letterSpacing: "0.3em" }}>On va vous faire danser </span>
           <div style={{ width: 28, height: 1, background: "rgba(202, 227, 80, 0.5)" }} />
         </div>
 
-        {/* Main heading */}
+       {/* Main heading */}
         <h1
-          className="font-condensed animate-fade-in-up delay-300"
-          style={{ fontSize: "clamp(3.5rem, 12vw, 9rem)", lineHeight: 0.88, letterSpacing: "-0.02em", fontWeight: 800, color: "#e4e4e2" }}
+          className="animate-fade-in-up delay-300"
+          style={{
+            fontSize: "clamp(3.5rem, 12vw, 9rem)",
+            lineHeight: 0.88,
+            letterSpacing: "-0.02em",
+            fontWeight: 800,
+            color: "#e4e4e2",
+            fontFamily: "'Barlow Condensed', sans-serif",
+          }}
         >
-          UFO<br />
-          <span style={{ color: "rgba(228, 228, 226, 0.18)", WebkitTextStroke: "1px rgba(228, 228, 226, 0.28)" }}>.recordz</span><br />
-          
+          UFO
+          <br />
+          <span
+            style={{
+              color: "rgba(228, 228, 226, 0.18)",
+              WebkitTextStroke: "1px rgba(228, 228, 226, 0.28)",
+            }}
+          >
+            .recordz
+          </span>
         </h1>
 
         <p className="animate-fade-in-up delay-500 text-sm font-light" style={{ color: "rgba(228, 228, 226, 0.38)", letterSpacing: "0.14em" }}>
           TEKNO LABEL & EVENTS 
         </p>
 
-        <div className="animate-fade-in-up delay-700 flex flex-col sm:flex-row gap-4 items-center">
-          <Link
-            to="/label"
-            className="font-condensed text-xs tracking-widest px-8 py-3.5 transition-all duration-300 hover:brightness-90"
-            style={{
-              background: "#d4e350",
-              color: "#030302",
-              letterSpacing: "0.2em",
-              fontWeight: 600,
-            }}
-          >
-            NEW RELEASES
-          </Link>
+        <div className="animate-fade-in-up delay-700 flex flex-col items-center gap-4 sm:flex-row">
+        <Link
+          to="/label"
+          className="
+            flex w-52 items-center justify-center
+            border border-[#f8ff33bb]
+            bg-transparent px-8 py-3.5
+            font-condensed text-xs font-semibold uppercase
+            tracking-[0.2em] text-[#f8ff33bb]
+            transition-all duration-300
+            hover:bg-[#f8ff33bb] hover:text-[#030302]
+          "
+        >
+          NEW RELEASES
+        </Link>
 
-          <Link
-            to="/events"
-            className="font-condensed text-xs tracking-widest px-8 py-3.5 border transition-all duration-300 hover:border-[#50e3c2] hover:text-[#50e3c2]"
-            style={{
-              background: "#d4e350",
-              color: "#030302",
-              letterSpacing: "0.2em",
-              fontWeight: 600,
-            }}
-          >
-            UPCOMING EVENTS
-          </Link>
-        </div>
+        <Link
+          to="/events"
+          className="
+            flex w-52 items-center justify-center
+            border border-[#f8ff33bb]
+            bg-transparent px-8 py-3.5
+            font-condensed text-xs font-semibold uppercase
+            tracking-[0.2em] text-[#f8ff33bb]
+            transition-all duration-300
+            hover:bg-[#f8ff33bb] hover:text-[#030302]
+          "
+        >
+          UPCOMING EVENTS
+        </Link>
+      </div>
       </div>
 
       {/* Bottom scan line */}

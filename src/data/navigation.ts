@@ -24,4 +24,9 @@ export const NAV_LINKS = [
     value: "contact",
     path: "/contact",
   },
+  {
+    label: "SoundSystem",
+    value: "soundsystem",
+    path: "/soundsystem",
+  }
 ];

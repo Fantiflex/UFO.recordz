@@ -16,6 +16,7 @@ import UFORecordzPage from "./pages/UFORecordzPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
 import ArtistPage from "./pages/ArtistPage";
+import SoundSystemPage from "./pages/SoundSystemPage";
 
 function HomePage() {
   return (
@@ -49,6 +50,7 @@ export default function App() {
 
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/artists/:slug" element={<ArtistPage />} />
+          <Route path="/soundsystem" element={<SoundSystemPage />} />
         </Routes>
 
         <Footer />

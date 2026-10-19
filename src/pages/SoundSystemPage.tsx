@@ -1,6 +1,12 @@
 import SoundSystemModel from "../components/ufo/SoundSystemModel";
 import SoundSystemQuoteForm from "../components/ufo/SoundSystemQuoteForm";
+import { useState } from "react";
 
+const images = [
+  "/models/TEST FULL STACK.png",
+  "/models/TEST FULL STACK-2.png",
+  "/models/TEST FULL STACK-3.png",
+];
 
 const configurations = [
   {
@@ -33,7 +39,17 @@ const configurations = [
 
 
 export default function SoundSystemPage() {
-  return (
+  const [activeIndex, setActiveIndex] = useState(0); 
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const previousSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return ( 
     <main className="min-h-screen bg-[#020203] pt-28 pb-20">
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
 
@@ -60,6 +76,98 @@ export default function SoundSystemPage() {
             </span>
           </div>
         </div>
+
+        {/* SOUNDSYSTEM CONFIGURATIONS CAROUSEL */}
+        <section className="mt-24">
+
+          {/* HEADER */}
+          <div className="mb-10">
+
+            <h2 className="mt-4 text-3xl font-bold uppercase md:text-5xl">
+              UNE CONFIGURATION POUR
+              <span className="text-[#f8ff33]"> CHAQUE OCCASION : </span>
+            </h2>
+          </div>
+
+          {/* CAROUSEL */}
+          <div className="relative border border-white/10 bg-[#0a0a0a]">
+
+            {/* TOP BAR */}
+            <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+
+              <span className="font-mono text-xs uppercase tracking-widest text-[#f8ff33]">
+                CONFIGURATION {String(activeIndex + 1).padStart(2, "0")}
+              </span>
+
+              <span className="font-mono text-xs tracking-widest text-white/40">
+                {String(activeIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
+              </span>
+
+            </div>
+
+            {/* IMAGE */}
+            <div className="flex h-[320px] items-center justify-center p-6 md:h-[550px] md:p-12">
+
+              <img
+                key={images[activeIndex]}
+                src={encodeURI(images[activeIndex])}
+                alt={`Disposition ${activeIndex + 1} du soundsystem UFO`}
+                className="h-full w-full object-contain"
+              />
+
+            </div>
+
+            {/* BOTTOM CONTROLS */}
+            <div className="flex items-center justify-between border-t border-white/10 px-6 py-5">
+
+              {/* INDICATORS */}
+              <div className="flex items-center gap-3">
+
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Afficher la configuration ${index + 1}`}
+                    aria-current={activeIndex === index ? "true" : undefined}
+                    className={`h-[3px] transition-all duration-300 ${
+                      activeIndex === index
+                        ? "w-10 bg-[#f8ff33]"
+                        : "w-5 bg-white/20 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+
+              </div>
+
+              {/* ARROWS */}
+              <div className="flex items-center gap-3">
+
+                <button
+                  type="button"
+                  onClick={previousSlide}
+                  aria-label="Configuration précédente"
+                  className="flex h-11 w-11 items-center justify-center border border-white/20 text-white transition-colors duration-300 hover:border-[#f8ff33] hover:bg-[#f8ff33] hover:text-black"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  aria-label="Configuration suivante"
+                  className="flex h-11 w-11 items-center justify-center border border-white/20 text-white transition-colors duration-300 hover:border-[#f8ff33] hover:bg-[#f8ff33] hover:text-black"
+                >
+                  →
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
 
         {/* TECHNICAL SPECIFICATIONS */}
         <section className="mt-20">

@@ -50,6 +50,7 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
         )
       )
     `)
+    .eq("is_public", true)
     .order("Date", { ascending: false, nullsFirst: false })
     .returns<EventRow[]>();
 

@@ -80,3 +80,78 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
     };
   });
 }
+
+
+export type EventDetail = SupabaseEvent & {
+  slug: string;
+  description: string | null;
+  coverImage: string | null;
+};
+
+type EventDetailRow = EventRow & {
+  slug: string;
+  description: string | null;
+  cover_image: string | null;
+};
+
+export async function fetchEventBySlug(
+  slug: string
+): Promise<EventDetail | null> {
+  const { data, error } = await supabase
+    .from("events")
+    .select(`
+      id,
+      slug,
+      Name,
+      Date,
+      Venue,
+      Horaires,
+      description,
+      cover_image,
+      link_shotgun,
+      link_instagram,
+      event_artists (
+        artist_name,
+        artists_events (
+          slug
+        )
+      )
+    `)
+    .eq("slug", slug)
+    .eq("is_public", true)
+    .maybeSingle()
+    .returns<EventDetailRow>();
+
+  if (error) {
+    throw new Error(
+      `Chargement de l'événement : ${error.message}`
+    );
+  }
+
+  if (!data) return null;
+
+  const lineup = (data.event_artists ?? [])
+    .map((entry) => ({
+      name: entry.artist_name.trim(),
+      slug: entry.artists_events?.slug ?? "",
+    }))
+    .filter(
+      (artist) =>
+        artist.name.length > 0 &&
+        artist.slug.length > 0
+    );
+
+  return {
+    id: data.id,
+    slug: data.slug,
+    name: data.Name,
+    date: data.Date,
+    venue: data.Venue,
+    time: data.Horaires,
+    description: data.description,
+    coverImage: data.cover_image,
+    lineup,
+    linkShotgun: data.link_shotgun,
+    linkInstagram: data.link_instagram,
+  };
+}

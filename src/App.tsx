@@ -17,6 +17,7 @@ import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
 import ArtistPage from "./pages/ArtistPage";
 import SoundSystemPage from "./pages/SoundSystemPage";
+import EventDetailPage from "./pages/EventDetailPage";
 
 function HomePage() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/ufo-recordz" element={<UFORecordzPage />} />
 
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/events/:slug" element={<EventDetailPage />} />
 
           <Route path="/label" element={<LabelPage />} />
 
@@ -51,6 +53,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/artists/:slug" element={<ArtistPage />} />
           <Route path="/soundsystem" element={<SoundSystemPage />} />
+
         </Routes>
 
         <Footer />

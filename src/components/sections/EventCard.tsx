@@ -22,12 +22,19 @@ function formatDate(date: string | null) {
 export default function EventCard({ event }: EventCardProps) {
   return (
     <div
-      className="flex flex-col gap-6 p-8 md:flex-row md:items-center"
+      className="group relative flex flex-col gap-6 p-8 transition-colors duration-300 hover:bg-white/[0.03] md:flex-row md:items-center"
       style={{
         background: "var(--card)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
     >
+      {event.slug && (
+        <Link
+          to={`/events/${event.slug}`}
+          aria-label={`Voir la page de ${event.name}`}
+          className="absolute inset-0 z-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#f8ff33]"
+        />
+      )}
       <span
         className="flex-none font-mono text-xs"
         style={{
@@ -65,7 +72,7 @@ export default function EventCard({ event }: EventCardProps) {
                 href={event.linkShotgun}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs hover:underline"
+                className="relative z-10 font-mono text-xs hover:underline"
                 style={{ color: "#c8e350" }}
               >
                 SHOTGUN ↗
@@ -77,7 +84,7 @@ export default function EventCard({ event }: EventCardProps) {
                 href={event.linkInstagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs hover:underline"
+                className="relative z-10 font-mono text-xs hover:underline"
                 style={{ color: "#c8e350" }}
               >
                 INSTAGRAM ↗
@@ -94,7 +101,7 @@ export default function EventCard({ event }: EventCardProps) {
               <Link
                 key={`${artist.slug}-${index}`}
                 to={`/artists/${artist.slug}`}
-                className="px-2 py-0.5 font-mono text-xs hover:underline"
+                className="relative z-10 px-2 py-0.5 font-mono text-xs hover:underline"
                 style={{
                   color: "rgba(227,228,226,0.35)",
                   border: "1px solid rgba(255,255,255,0.06)",

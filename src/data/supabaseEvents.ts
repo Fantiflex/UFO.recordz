@@ -2,6 +2,7 @@ import { supabase } from "../lib/supabase";
 
 export type SupabaseEvent = {
   id: number;
+  slug: string | null;
   name: string;
   date: string | null;
   venue: string | null;
@@ -23,6 +24,7 @@ type EventArtistRow = {
 
 type EventRow = {
   id: number;
+  slug: string | null;
   Name: string;
   Date: string | null;
   Venue: string | null;
@@ -37,6 +39,7 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
     .from("events")
     .select(`
       id,
+      slug,
       Name,
       Date,
       Venue,
@@ -70,6 +73,7 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
 
     return {
       id: row.id,
+      slug: row.slug,
       name: row.Name,
       date: row.Date,
       venue: row.Venue,

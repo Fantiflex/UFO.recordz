@@ -7,6 +7,7 @@ export type SupabaseEvent = {
   date: string | null;
   venue: string | null;
   time: string | null;
+  coverImage: string | null;
   lineup: {
     name: string;
     slug: string;
@@ -32,6 +33,7 @@ type EventRow = {
   link_shotgun: string | null;
   link_instagram: string | null;
   event_artists: EventArtistRow[];
+  cover_image: string | null;
 };
 
 export async function fetchEvents(): Promise<SupabaseEvent[]> {
@@ -44,6 +46,7 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
       Date,
       Venue,
       Horaires,
+      cover_image,
       link_shotgun,
       link_instagram,
       event_artists (
@@ -78,6 +81,7 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
       date: row.Date,
       venue: row.Venue,
       time: row.Horaires,
+      coverImage: row.cover_image,
       lineup,
       linkShotgun: row.link_shotgun,
       linkInstagram: row.link_instagram,
@@ -89,7 +93,6 @@ export async function fetchEvents(): Promise<SupabaseEvent[]> {
 export type EventDetail = SupabaseEvent & {
   slug: string;
   description: string | null;
-  coverImage: string | null;
 };
 
 type EventDetailRow = EventRow & {

@@ -44,6 +44,7 @@ export default function EventCard({ event }: EventCardProps) {
       >
         {event.id}
       </span>
+  
 
       <div className="min-w-0 flex-1">
         <h3

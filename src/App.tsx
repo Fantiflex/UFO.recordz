@@ -19,6 +19,8 @@ import ArtistPage from "./pages/ArtistPage";
 import SoundSystemPage from "./pages/SoundSystemPage";
 import EventDetailPage from "./pages/EventDetailPage";
 
+import GoogleAnalytics from "./components/analytics/GoogleAnalytics";
+
 function HomePage() {
   return (
     <>
@@ -35,6 +37,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <GoogleAnalytics />
       <div className="min-h-screen bg-black text-white">
         <Navbar />
 

@@ -126,7 +126,7 @@ export default function EventDetailPage() {
                         to={`/artists/${artist.slug}`}
                         className="border border-neutral-700 px-6 py-4 font-condensed text-xl uppercase transition-colors hover:border-[#f8ff33] hover:text-[#f8ff33]"
                     >
-                        {artist.name} ↗
+                        {artist.name} 
                     </Link>
                     ))}
                 </div>
@@ -143,7 +143,7 @@ export default function EventDetailPage() {
                     rel="noopener noreferrer"
                     className="bg-[#f8ff33] px-8 py-4 font-bold uppercase text-black transition-opacity hover:opacity-80"
                 >
-                    BILLETTERIE ↗
+                    BILLETTERIE 
                 </a>
                 )}
 
@@ -154,7 +154,7 @@ export default function EventDetailPage() {
                     rel="noopener noreferrer"
                     className="border border-[#f8ff33] px-8 py-4 font-bold uppercase text-[#f8ff33] transition-colors hover:bg-[#f8ff33] hover:text-black"
                 >
-                    INSTAGRAM ↗
+                    INSTAGRAM 
                 </a>
                 )}
 

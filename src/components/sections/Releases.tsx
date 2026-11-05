@@ -285,20 +285,7 @@ function Releases() {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between">
-                <span
-                  className="font-mono text-xs"
-                  style={{
-                    color:
-                      "rgba(228, 228, 226, 0.2)",
-                    letterSpacing:
-                      "0.1em",
-                  }}
-                >
-                  {formatDate(
-                    release["Release Date"]
-                  )}
-                </span>
+              <div className="mt-6 flex items-center justify-end">
 
                 <span
                   className="font-condensed text-xs tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300"

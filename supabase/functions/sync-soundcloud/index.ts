@@ -1,12 +1,31 @@
 import "@supabase/functions-js/edge-runtime.d.ts";
 import { withSupabase } from "@supabase/server";
 
+
+
 export default {
   fetch: withSupabase(
     { auth: ["secret"] },
 
-    async (_req, ctx) => {
+    async (req, ctx) => {
       try {
+        
+        if (req.method !== "POST") {
+          return Response.json(
+            { error: "Method not allowed" },
+            { status: 405 }
+          );
+        }
+
+        const body = await req.json().catch(() => ({}));
+        const apply = body.mode === "apply";
+
+        if (apply && body.confirm !== "SYNC_SOUNDCLOUD") {
+          return Response.json(
+            { error: "Explicit confirmation required" },
+            { status: 400 }
+          );
+        }
         // =========================
         // 1. Load SoundCloud secrets
         // =========================
@@ -176,10 +195,20 @@ export default {
               track.release_date ??
               track.created_at?.split("T")[0] ??
               null;
+            const catalogMatch = track.title?.match(/\[UFO(\d{3})\]/i);
 
+            const catalogNumber = catalogMatch
+              ? Number(catalogMatch[1])
+              : null;
+
+            const catalogCode = catalogMatch
+              ? `UFO${catalogMatch[1]}`
+              : null;
             return {
               "Track ID": track.urn,
-
+              
+              "catalog_code": catalogCode,
+              "catalog_number": catalogNumber,
               "Artist": artist,
 
               "Track Name": track.title ?? "Untitled",
@@ -196,6 +225,7 @@ export default {
                   : null,
 
               "Link Soundcloud": track.permalink_url ?? null,
+              
 
               // Artwork from SoundCloud.
               // Fallback to the profile image if no track artwork exists.
@@ -205,40 +235,73 @@ export default {
                 null,
 
               // Manual fields
-              "Link Bandcamp": null,
-
-              "Graphist": null,
             };
           });
 
+        
         // =========================
-        // 6. Save to Supabase
+        // 6. Synchronize releases
         // =========================
 
-        if (releases.length === 0) {
+        type Release = (typeof releases)[number];
+
+        const { data: existing, error: readError } =
+          await ctx.supabaseAdmin
+            .from("releases")
+            .select('"Track ID"');
+
+        if (readError) throw readError;
+
+        const existingIds = new Set(
+          (existing ?? []).map((row) => row["Track ID"])
+        );
+
+        const toInsert: Release[] = [];
+        const toUpdate: Release[] = [];
+
+        for (const release of releases) {
+          if (existingIds.has(release["Track ID"])) {
+            toUpdate.push(release);
+          } else {
+            toInsert.push(release);
+          }
+        }
+
+        // Preview only — no database writes
+        if (!apply) {
           return Response.json({
             success: true,
-            soundcloud_user: user.username,
-            tracks_found: 0,
-            releases_saved: 0,
-            message: "No SoundCloud tracks found",
+            mode: "dry_run",
+            tracks_found: tracks.length,
+            to_insert: toInsert.length,
+            to_update: toUpdate.length,
+            sample: releases.slice(0, 5).map((release) => ({
+              title: release["Track Name"],
+              catalog_code: release.catalog_code,
+              catalog_number: release.catalog_number,
+            })),
           });
         }
 
-        const { error: dbError } = await ctx.supabaseAdmin
-          .from("releases")
-          .upsert(releases, {
-            onConflict: "Track ID",
-          });
+        // Insert new releases
+        if (toInsert.length > 0) {
+          const { error } = await ctx.supabaseAdmin
+            .from("releases")
+            .insert(toInsert);
 
-        if (dbError) {
-          return Response.json(
-            {
-              error: "Could not save releases to Supabase",
-              details: dbError.message,
-            },
-            { status: 500 }
-          );
+          if (error) throw error;
+        }
+
+        // Update existing releases without touching manual fields
+        for (const release of toUpdate) {
+          const { "Track ID": trackId, ...updates } = release;
+
+          const { error } = await ctx.supabaseAdmin
+            .from("releases")
+            .update(updates)
+            .eq("Track ID", trackId);
+
+          if (error) throw error;
         }
 
         // =========================
@@ -247,10 +310,13 @@ export default {
 
         return Response.json({
           success: true,
+          mode: "apply",
           soundcloud_user: user.username,
           tracks_found: tracks.length,
-          releases_saved: releases.length,
+          inserted: toInsert.length,
+          updated: toUpdate.length,
         });
+
       } catch (error) {
         console.error("SoundCloud sync error:", error);
 

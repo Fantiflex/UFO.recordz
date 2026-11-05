@@ -266,7 +266,9 @@ export default {
             toInsert.push(release);
           }
         }
-
+        const missingCatalog = releases
+          .filter((release) => release.catalog_number === null)
+          .map((release) => release["Track Name"]);
         // Preview only — no database writes
         if (!apply) {
           return Response.json({
@@ -275,6 +277,8 @@ export default {
             tracks_found: tracks.length,
             to_insert: toInsert.length,
             to_update: toUpdate.length,
+            missing_catalog_count: missingCatalog.length,
+            missing_catalog: missingCatalog,  
             sample: releases.slice(0, 5).map((release) => ({
               title: release["Track Name"],
               catalog_code: release.catalog_code,

@@ -6,7 +6,6 @@ import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import WhoWeAre from "./components/sections/WhoWeAre";
 import Releases from "./components/sections/Releases";
-import Events from "./components/sections/Events";
 import TrustedBy from "./components/sections/TrustedBy";
 import PlayedWithUs from "./components/sections/PlayedWithUs";
 import FAQ from "./components/sections/FAQ";
@@ -19,6 +18,7 @@ import ContactPage from "./pages/ContactPage";
 import ArtistPage from "./pages/ArtistPage";
 import SoundSystemPage from "./pages/SoundSystemPage";
 import EventDetailPage from "./pages/EventDetailPage";
+import BilletterieSolidairePage from "./pages/BilletterieSolidairePage";
 
 import GoogleAnalytics from "./components/analytics/GoogleAnalytics";
 
@@ -57,6 +57,8 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/artists/:slug" element={<ArtistPage />} />
           <Route path="/soundsystem" element={<SoundSystemPage />} />
+          <Route path="/billetterie-solidaire" element={<BilletterieSolidairePage />}
+          />
 
         </Routes>
 

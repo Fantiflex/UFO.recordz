@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const faqs = [
   {
@@ -63,13 +65,35 @@ export default function FAQ() {
                 </span>
               </button>
 
-              <div
-                id={`faq-answer-${index}`}
-                hidden={!isOpen}
-                className="pb-6 text-white/65 leading-relaxed max-w-3xl"
-              >
-                {faq.answer}
-              </div>
+              
+            <div
+            id={`faq-answer-${index}`}
+            hidden={!isOpen}
+            className="pb-6 text-white/65 leading-relaxed max-w-3xl"
+            >
+            {index === 0 ? (
+                <p>
+                Quand nos événements le permettent, l'entrée est gratuite.
+                Sinon, nous nous engageons à vous proposer des tarifs
+                solidaires. Consultez{" "}
+                <Link
+                    to="/billetterie-solidaire"
+                    className="
+                    text-[#f8ff33]
+                    underline underline-offset-4
+                    hover:text-white
+                    transition-colors
+                    "
+                >
+                    ici
+                </Link>{" "}
+                les instructions.
+                </p>
+            ) : (
+                faq.answer
+            )}
+            </div>
+
             </div>
           );
         })}

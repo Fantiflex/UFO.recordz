@@ -66,23 +66,7 @@ function WhoWeAre() {
             artistes qui la font vivre.
           </p>
 
-          {/* Small tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {["TEKNO", "FREE PARTY", "EVENTS", "LABEL", "COLLECTIF"].map((tag) => (
-              <span
-                key={tag}
-                className="font-mono text-xs px-3 py-1.5"
-                style={{
-                  color: "#f4f445",
-                  border: "1px solid rgba(227, 227, 80, 0.16)",
-                  background: "rgba(80,227,194,0.035)",
-                  letterSpacing: "0.12em",
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          
         </div>
       </div>
     </section>

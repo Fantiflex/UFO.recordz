@@ -15,6 +15,8 @@ type Release = {
   "Link Bandcamp": string | null;
   "Artwork URL": string | null;
   Graphist: string | null;
+  catalog_code: string | null;
+  catalog_number: number | null;
 };
 
 const COLORS = [
@@ -65,13 +67,19 @@ function Releases() {
 
   useEffect(() => {
     async function fetchReleases() {
-      const { data, error } = await supabase
-        .from("releases")
-        .select("*")
-        .order("Release Date", {
-          ascending: false,
-        })
-        .limit(6);
+      
+  const { data, error } = await supabase
+    .from("releases")
+    .select("*")
+    .order("catalog_number", {
+      ascending: false,
+      nullsFirst: false,
+    })
+    .order("Release Date", {
+      ascending: false,
+    })
+    .limit(6);
+
 
       if (error) {
         console.error(
@@ -208,7 +216,7 @@ function Releases() {
                           "rgba(228,228,226,0.25)",
                       }}
                     >
-                      UFO
+                      {release.catalog_code ?? "UFO"}
                     </div>
                   )}
                 </div>

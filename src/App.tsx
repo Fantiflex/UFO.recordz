@@ -9,6 +9,7 @@ import Releases from "./components/sections/Releases";
 import Events from "./components/sections/Events";
 import TrustedBy from "./components/sections/TrustedBy";
 import PlayedWithUs from "./components/sections/PlayedWithUs";
+import FAQ from "./components/sections/FAQ";
 
 import LabelPage from "./pages/LabelPage";
 import ValeursPage from "./pages/ValeursPage";
@@ -29,7 +30,7 @@ function HomePage() {
       <WhoWeAre />
       <PlayedWithUs />
       <Releases />
-      <Events />      
+      <FAQ />      
     </>
   );
 }
